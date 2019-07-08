@@ -1,0 +1,96 @@
+html {
+  font-size: 625%;
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+  html {
+    font-size: 520%;
+  }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+  html {
+    font-size: 460%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 420%;
+  }
+}
+
+.login {
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/login-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.login-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.login-con {
+  width: 5.8rem;
+  margin: 0 auto;
+  padding: .6rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  position: relative;
+}
+
+.login-title {
+  color: #2b2b2b;
+  font-size: .28rem;
+  margin: 0 auto;
+  margin-bottom: .2rem;
+}
+
+.login-subtitle {
+  color: #afafaf;
+  font-size: .14rem;
+  margin: 0 auto;
+  margin-bottom: .55rem;
+}
+
+.login-input-line {
+  position: relative;
+  background-color: #fff;
+  height: .5rem;
+  margin-top: .3rem;
+}
+
+.login-input-line img {
+  position: absolute;
+  height: .2rem;
+  top: .15rem;
+  left: .15rem;
+}
+
+.login-input-line input {
+  width: 100%;
+  height: .5rem;
+  line-height: .5rem;
+  padding-left: .6rem;
+  border: 1px solid #D4D8E9;
+  font-size: .14rem;
+}
+
+.login-btn {
+  width: 100%;
+  height: .5rem;
+  line-height: .5rem;
+  color: #fff;
+  font-size: .18rem;
+  background-color: #1864aa;
+  border: none;
+  margin-top: .5rem;
+  cursor: pointer;
+}

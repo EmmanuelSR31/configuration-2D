@@ -1,0 +1,301 @@
+.config-con{
+  position: relative;
+}
+.config-header{
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  text-align: center;
+  background: rgba($color: #000000, $alpha: .6);
+  a{
+    color: #fff;
+    font-size: .16rem;
+  }
+}
+.config-header-btn{
+  float: left;
+  margin-left: 20px;
+}
+.config-left, .config-right, .config-item-con{
+  position: fixed;
+  top: 50px;
+  height: calc(100% - 50px);
+}
+.config-left, .config-right{
+  color: #fff;
+  background: rgba($color: #000000, $alpha: .6);
+}
+.config-left{
+  left: 0;
+  width: 60px;
+  ul{
+    li{
+      padding: 12px 0;
+      text-align: center;
+      font-size: .15rem;
+      a{
+        color: #999ea8;
+      }
+      i{
+        font-size: .3rem;
+        margin-bottom: 6px;
+      }
+      &.active, &:hover{
+        a{
+          color: #fff;
+        }
+      }
+      &.active{
+        background-color: #4c84ff;
+      }
+    }
+  }
+}
+.config-right{
+  right: 20px;
+  width: 280px;
+  overflow: auto;
+  z-index: 10;
+  .ivu-tabs-nav .ivu-tabs-tab{
+    color: #fff;
+  }
+  .ivu-tabs-nav .ivu-tabs-tab-active{
+    color: #2d8cf0;
+  }
+}
+.config-right-hide{
+  width: 0;
+}
+.config-item-con{
+  left: 60px;
+  width: 280px;
+  padding: 5px;
+  background: #fff;
+  z-index: 10;
+}
+.config-center{
+  height: calc(100% - 50px);
+  margin-left: 60px;
+  background: url(/img/drag-bg.png) #f5f6fa center repeat;
+}
+.svg-div{
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.drop{
+  height: 100%;
+}
+.contextmenu-con{
+  position: fixed;
+  z-index: 100;
+  background-color: #ffffff;
+  padding: 5px 0;
+  li{
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    &:hover{
+      background-color: #eeeeee;
+    }
+  }
+}
+.config-right-toggle-btn{
+  padding: 3px 5px;
+  a{
+    color: #fff;
+    .icon{
+      font-size: .26rem;
+    }
+    &:hover{
+      color: #fff;
+    }
+  }
+}
+.config-right-hide-btn{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0,0,0,.6);
+  position: fixed;
+  top: 85px;
+  right: 20px;
+  .icon{
+    transform: rotate(180deg);
+  }
+}
+.config-right-from-con{
+  padding: .1rem;
+  color: #fff;
+  .ivu-form-item{
+    margin-bottom: 10px;
+  }
+  .ivu-form .ivu-form-item-label{
+    color: #fff;
+  }
+}
+.config-item-top{
+  text-align: center;
+  font-size: .15rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 8px;
+  line-height: 40px;
+  .icon{
+    float: right;
+    margin-right: 5px;
+    font-size: .2rem;
+    margin-top: 8px;
+  }
+}
+.config-item-type-con{
+  background-color: #fff;
+  ul{
+    padding: 10px 0;
+    li{
+      float: left;
+      width: 42%;
+      margin: 0 4% 10px 4%;
+      border: 1px solid #eeee;
+      text-align: center;
+      line-height: 30px;
+      font-size: .14rem;
+      border-radius: 5px;
+      cursor: pointer;
+      &.active{
+        border-color: #2d8cf0;
+      }
+    }
+  }
+}
+.config-item-list{
+  column-count: 2;
+  column-gap: 0;
+  li{
+    padding: 10px;
+    border: 1px solid #fff;
+    cursor: move;
+    img{
+      width: 100%;
+    }
+    &:hover{
+      border: 1px solid #efefef;
+    }
+  }
+}
+.config-img-item-list{
+  column-count: 3;
+}
+.config-item-list-con{
+  position: relative;
+  overflow: auto;
+}
+.upload-img-list{
+  li{
+    position: relative;
+    &:hover{
+      .upload-img-del{
+        opacity: 1;
+      }
+    }
+  }
+}
+.upload-img-del{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #333;
+  font-size: .2rem;
+  opacity: 0;
+}
+.config-common-item-list{
+  li{
+    float: left;
+    width: 50%;
+    padding: 10px 0;
+    text-align: center;
+    border: 1px solid #fff;
+    cursor: move;
+    .icon{
+      font-size: .55rem;
+    }
+    h3{
+      font-size: .16rem;
+      font-weight: normal;
+    }
+    &:hover{
+      border: 1px solid #efefef;
+    }
+  }
+}
+.config-font-style-a-con{
+  a{
+    display: inline-block;
+    width: 33.33%;
+    height: 30px;
+    text-align: center;
+    background-color: #fff;
+    border-right: 1px solid #efefef;
+    .icon{
+      font-size: .18rem;
+    }
+    &:last-child{
+      border-right: none;
+    }
+    &.active{
+      background-color: #2d8cf0;
+      color: #fff;
+    }
+  }
+}
+.drag-weather-con{
+  position: relative;
+  text-align: center;
+}
+.drag-weather-mask{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 2;
+}
+.svg-img-con{
+  display: inline-block;
+  overflow: hidden;
+}
+.config-cover img{
+  width: 100%;
+  cursor: pointer;
+}
+.config-modal{
+  .ivu-modal-close .ivu-icon-ios-close{
+    color: #fff;
+  }
+  .ivu-modal-body{
+    padding: 0;
+  }
+}
+.base-modal-con{
+  padding-top: 30px;
+}
+.swal2-container{
+  z-index: 2000;
+}
+.sel-div{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px dashed #999;
+}
+@font-face {
+  font-family: 'lcdd';
+  src: url('/img/LcdD.ttf');
+}
+.led-con{
+  font-family: 'lcdd';
+}
