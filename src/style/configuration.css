@@ -40,10 +40,11 @@
   padding: 12px 0;
   text-align: center;
   font-size: .15rem;
+  cursor: pointer;
 }
 
 .config-left ul li a {
-  color: #999ea8;
+  color: #ddd;
 }
 
 .config-left ul li i {
@@ -88,7 +89,9 @@
 
 .config-center {
   height: calc(100% - 50px);
-  margin-left: 60px;
+}
+
+.config-center-bg {
   background: url(/img/drag-bg.png) #f5f6fa center repeat;
 }
 
@@ -347,4 +350,8 @@
 
 .led-con {
   font-family: 'lcdd';
+}
+
+.back-drag-able {
+  cursor: move;
 }

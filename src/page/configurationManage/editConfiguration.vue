@@ -10,12 +10,12 @@
   <div class="config-con">
     <div class="config-left">
       <ul>
-        <li :class="{'active': curItemListType === 'common'}"><a href="javascript:void(0)" @click="setCurItemListType('common')"><Icon type="ios-paper-outline" /><br>基本</a></li>
-        <li :class="{'active': curItemListType === 'chart'}"><a href="javascript:void(0)" @click="setCurItemListType('chart')"><Icon type="md-stats" /><br>组件</a></li>
-        <li :class="{'active': curItemListType === 'device'}"><a href="javascript:void(0)" @click="setCurItemListType('device')"><Icon type="ios-image-outline" /><br>图库</a></li>
-        <li :class="{'active': curItemListType === 'img'}"><a href="javascript:void(0)" @click="setCurItemListType('img')"><Icon type="md-photos" /><br>图形</a></li>
-        <li :class="{'active': curItemListType === 'canvas'}"><a href="javascript:void(0)" @click="setCurItemListType('canvas')"><Icon type="md-git-compare" /><br>动画</a></li>
-        <li :class="{'active': curItemListType === 'uploadImg'}"><a href="javascript:void(0)" @click="setCurItemListType('uploadImg')"><Icon type="md-cloud-upload" /><br>上传</a></li>
+        <li :class="{'active': curItemListType === 'common'}" @click="setCurItemListType('common')"><a href="javascript:void(0)"><Icon type="ios-paper-outline" /><br>基本</a></li>
+        <li :class="{'active': curItemListType === 'chart'}" @click="setCurItemListType('chart')"><a href="javascript:void(0)"><Icon type="md-stats" /><br>组件</a></li>
+        <li :class="{'active': curItemListType === 'device'}" @click="setCurItemListType('device')"><a href="javascript:void(0)"><Icon type="ios-image-outline" /><br>图库</a></li>
+        <li :class="{'active': curItemListType === 'img'}" @click="setCurItemListType('img')"><a href="javascript:void(0)"><Icon type="md-photos" /><br>图形</a></li>
+        <li :class="{'active': curItemListType === 'canvas'}" @click="setCurItemListType('canvas')"><a href="javascript:void(0)"><Icon type="md-git-compare" /><br>动画</a></li>
+        <li :class="{'active': curItemListType === 'uploadImg'}" @click="setCurItemListType('uploadImg')"><a href="javascript:void(0)"><Icon type="md-cloud-upload" /><br>上传</a></li>
       </ul>
     </div>
     <div class="config-item-con" v-show="itemListShow">
@@ -79,87 +79,166 @@
         </div>
       </div>
     </div>
-    <drop class="drop" @drop="handleDrop">
-      <div class="config-center" :style="{width: basicSettings.width + 'px', height: basicSettings.height + 'px', backgroundColor: basicSettings.backColor}" @mousedown="configClick">
-        <VueDragResize v-show="showSelDiv" :isActive="true" :isResizable="false" :w="selDivWidth" :h="selDivHeight" :x="selDivX" :y="selDivY" @dragging="selDragging">
-          <div class="sel-div"></div>
-        </VueDragResize>
-        <VueDragResize v-for="(item, index) in items" :isActive="item.active" :isDraggable="!item.lock" :isResizable="!item.lock" :w="item.width" :h="item.height" :x="item.left" :y="item.top" :minw="1" :minh="1" class="svg-div" :style="itemStyle(item)" @activated="onDrag(item, index)" @deactivated="deactivatedItem(index)" @dragstop="dragStop" @resizestop="resizeStop" v-on:contextmenu.native="showContextMenu(item, index, $event)" :data-id="item.id" :key="index">
-          <template v-if="item.type === 'device'">
-            <img :src="item.img" :id="item.id">
-          </template>
-          <template v-else-if="item.type === 'chart'">
-            <template v-if="item.class === 'switch'">
-              <switch1 :obj="item" :index="index"></switch1>
-            </template>
-            <template v-else-if="item.class === 'value'">
-              <sensor-value :obj="item" :index="index"></sensor-value>
-            </template>
-            <template v-else-if="item.class === 'led'">
-              <led :obj="item" :index="index"></led>
-            </template>
-            <template v-else-if="item.class === 'echart-line'">
-              <echart-line :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :smoothFlag="item.smoothFlag" :areaFlag="item.areaFlag" :dataZoom="item.dataZoom" :markLine="item.markLine" :stackFlag="item.stackFlag" :index="index"></echart-line>
-            </template>
-            <template v-else-if="item.class === 'echart-bar'">
-              <echart-bar :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :dataZoom="item.dataZoom" :transverse="item.transverse" :stackFlag="item.stackFlag" :index="index"></echart-bar>
-            </template>
-            <template v-else-if="item.class === 'echart-pie'">
-              <echart-pie :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :annular="item.annular" :index="index"></echart-pie>
-            </template>
-            <template v-else-if="item.class === 'echart-gauge'">
-              <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :index="index"></echart-gauge>
-            </template>
-          </template>
-          <template v-else-if="item.type === 'text'">
-            {{item.text}}
-          </template>
-          <template v-else-if="item.type === 'datetime'">
-            {{nowDatetime}}
-          </template>
-          <template v-else-if="item.type === 'weather'">
-            <div class="drag-weather-con">
-              <template v-if="item.class === 1">
-                <iframe width="200" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&num=1&site=12"></iframe>
+    <div :style="{width: basicSettings.width + 'px', height: basicSettings.height + 'px'}" @mousedown="configClick">
+      <vue-draggable-resizable :class="{'back-drag-able' : backDragFlag}" :draggable="backDragFlag" :resizable="false" :w="basicSettings.width" :h="basicSettings.height" :x="backDragX" :y="backDragY" @dragstop="backDragStop">
+        <drop class="drop" @drop="handleDrop">
+          <div class="config-center" :class="{'config-center-bg': basicSettings.showAuxiliaryLine}" :style="{width: basicSettings.width + 'px', height: basicSettings.height + 'px', backgroundColor: basicSettings.backColor}">
+            <VueDragResize v-show="showSelDiv" :isActive="true" :isResizable="false" :w="selDivWidth" :h="selDivHeight" :x="selDivX" :y="selDivY" @dragstop="selDragStop">
+              <div class="sel-div">
+                <VueDragResize v-for="(item, index) in selItems" :isActive="true" :isDraggable="false" :isResizable="false" :w="item.width" :h="item.height" :x="item.left - selDivX - 2" :y="item.top - selDivY - 2" :minw="1" :minh="1" class="svg-div" :style="itemStyle(item)" :data-id="item.id" :key="index">
+                  <template v-if="item.type === 'device'">
+                    <img :src="item.img" :id="item.id">
+                  </template>
+                  <template v-else-if="item.type === 'chart'">
+                    <template v-if="item.class === 'switch'">
+                      <switch1 :obj="item" :index="index"></switch1>
+                    </template>
+                    <template v-else-if="item.class === 'value'">
+                      <sensor-value :obj="item" :index="index"></sensor-value>
+                    </template>
+                    <template v-else-if="item.class === 'led'">
+                      <led :obj="item" :index="index"></led>
+                    </template>
+                    <template v-else-if="item.class === 'echart-line'">
+                      <echart-line :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :smoothFlag="item.smoothFlag" :areaFlag="item.areaFlag" :dataZoom="item.dataZoom" :markLine="item.markLine" :stackFlag="item.stackFlag" :index="index"></echart-line>
+                    </template>
+                    <template v-else-if="item.class === 'echart-bar'">
+                      <echart-bar :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :dataZoom="item.dataZoom" :transverse="item.transverse" :stackFlag="item.stackFlag" :index="index"></echart-bar>
+                    </template>
+                    <template v-else-if="item.class === 'echart-pie'">
+                      <echart-pie :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :annular="item.annular" :index="index"></echart-pie>
+                    </template>
+                    <template v-else-if="item.class === 'echart-gauge'">
+                      <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :index="index"></echart-gauge>
+                    </template>
+                  </template>
+                  <template v-else-if="item.type === 'text'">
+                    {{item.text}}
+                  </template>
+                  <template v-else-if="item.type === 'datetime'">
+                    {{nowDatetime}}
+                  </template>
+                  <template v-else-if="item.type === 'weather'">
+                    <div class="drag-weather-con">
+                      <template v-if="item.class === 1">
+                        <iframe width="200" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&num=1&site=12"></iframe>
+                      </template>
+                      <template v-else-if="item.class === 2">
+                        <iframe width="300" scrolling="no" height="20" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=1&icon=1&wind=1&num=1&site=12"></iframe>
+                      </template>
+                      <template v-else-if="item.class === 3">
+                        <iframe width="320" scrolling="no" height="120" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=19&icon=1&temp=1&num=1&site=12"></iframe>
+                      </template>
+                      <template v-else-if="item.class === 4">
+                        <iframe width="640" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&num=5&site=12"></iframe>
+                      </template>
+                      <div class="drag-weather-mask"></div>
+                    </div>
+                  </template>
+                  <template v-else-if="item.type === 'link'">
+                    <a :href="item.href" target="_blank" :style="{color: item.color}">{{item.text}}</a>
+                  </template>
+                  <template v-else-if="item.type === 'img'">
+                    <div class="svg-img-con">
+                      <img :src="item.img" :id="item.id" :style="svgImgStyle(item)">
+                    </div>
+                  </template>
+                  <template v-else-if="item.type === 'pip-h'">
+                    <pipeline :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline>
+                  </template>
+                  <template v-else-if="item.type === 'pip-corner'">
+                    <pipeline-corner :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline-corner>
+                  </template>
+                  <template v-else-if="item.type === 'progress'">
+                    <progress-bar :obj="item" :index="index"></progress-bar>
+                  </template>
+                  <template v-else-if="item.type === 'liquidfill'">
+                    <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :index="index"></liquidfill>
+                  </template>
+                  <template v-else-if="item.type === 'upload'">
+                    <img :src="uploadIp + '/v2/upDown/preview?id=' + item.uploadId" :id="item.id">
+                  </template>
+                </VueDragResize>
+              </div>
+            </VueDragResize>
+            <VueDragResize v-for="(item, index) in items" v-show="item.showFlag" :isActive="item.active" :isDraggable="!item.lock" :isResizable="!item.lock" :w="item.width" :h="item.height" :x="item.left" :y="item.top" :minw="1" :minh="1" class="svg-div" :style="itemStyle(item)" @activated="onDrag(item, index)" @deactivated="deactivatedItem(index)" @dragstop="dragStop" @resizestop="resizeStop" v-on:contextmenu.native="showContextMenu(item, index, $event)" :data-id="item.id" :key="index">
+              <template v-if="item.type === 'device'">
+                <img :src="item.img" :id="item.id">
               </template>
-              <template v-else-if="item.class === 2">
-                <iframe width="300" scrolling="no" height="20" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=1&icon=1&wind=1&num=1&site=12"></iframe>
+              <template v-else-if="item.type === 'chart'">
+                <template v-if="item.class === 'switch'">
+                  <switch1 :obj="item" :index="index"></switch1>
+                </template>
+                <template v-else-if="item.class === 'value'">
+                  <sensor-value :obj="item" :index="index"></sensor-value>
+                </template>
+                <template v-else-if="item.class === 'led'">
+                  <led :obj="item" :index="index"></led>
+                </template>
+                <template v-else-if="item.class === 'echart-line'">
+                  <echart-line :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :smoothFlag="item.smoothFlag" :areaFlag="item.areaFlag" :dataZoom="item.dataZoom" :markLine="item.markLine" :stackFlag="item.stackFlag" :index="index"></echart-line>
+                </template>
+                <template v-else-if="item.class === 'echart-bar'">
+                  <echart-bar :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :dataZoom="item.dataZoom" :transverse="item.transverse" :stackFlag="item.stackFlag" :index="index"></echart-bar>
+                </template>
+                <template v-else-if="item.class === 'echart-pie'">
+                  <echart-pie :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :annular="item.annular" :index="index"></echart-pie>
+                </template>
+                <template v-else-if="item.class === 'echart-gauge'">
+                  <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :index="index"></echart-gauge>
+                </template>
               </template>
-              <template v-else-if="item.class === 3">
-                <iframe width="320" scrolling="no" height="120" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=19&icon=1&temp=1&num=1&site=12"></iframe>
+              <template v-else-if="item.type === 'text'">
+                {{item.text}}
               </template>
-              <template v-else-if="item.class === 4">
-                <iframe width="640" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&num=5&site=12"></iframe>
+              <template v-else-if="item.type === 'datetime'">
+                {{nowDatetime}}
               </template>
-              <div class="drag-weather-mask"></div>
-            </div>
-          </template>
-          <template v-else-if="item.type === 'link'">
-            <a :href="item.href" target="_blank" :style="{color: item.color}">{{item.text}}</a>
-          </template>
-          <template v-else-if="item.type === 'img'">
-            <div class="svg-img-con">
-              <img :src="item.img" :id="item.id" :style="svgImgStyle(item)">
-            </div>
-          </template>
-          <template v-else-if="item.type === 'pip-h'">
-            <pipeline :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline>
-          </template>
-          <template v-else-if="item.type === 'pip-corner'">
-            <pipeline-corner :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline-corner>
-          </template>
-          <template v-else-if="item.type === 'progress'">
-            <progress-bar :obj="item" :index="index"></progress-bar>
-          </template>
-          <template v-else-if="item.type === 'liquidfill'">
-            <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :index="index"></liquidfill>
-          </template>
-          <template v-else-if="item.type === 'upload'">
-            <img :src="uploadIp + '/v2/upDown/preview?id=' + item.uploadId" :id="item.id">
-          </template>
-        </VueDragResize>
-      </div>
-    </drop>
+              <template v-else-if="item.type === 'weather'">
+                <div class="drag-weather-con">
+                  <template v-if="item.class === 1">
+                    <iframe width="200" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&num=1&site=12"></iframe>
+                  </template>
+                  <template v-else-if="item.class === 2">
+                    <iframe width="300" scrolling="no" height="20" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=1&icon=1&wind=1&num=1&site=12"></iframe>
+                  </template>
+                  <template v-else-if="item.class === 3">
+                    <iframe width="320" scrolling="no" height="120" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=19&icon=1&temp=1&num=1&site=12"></iframe>
+                  </template>
+                  <template v-else-if="item.class === 4">
+                    <iframe width="640" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&num=5&site=12"></iframe>
+                  </template>
+                  <div class="drag-weather-mask"></div>
+                </div>
+              </template>
+              <template v-else-if="item.type === 'link'">
+                <a :href="item.href" target="_blank" :style="{color: item.color}">{{item.text}}</a>
+              </template>
+              <template v-else-if="item.type === 'img'">
+                <div class="svg-img-con">
+                  <img :src="item.img" :id="item.id" :style="svgImgStyle(item)">
+                </div>
+              </template>
+              <template v-else-if="item.type === 'pip-h'">
+                <pipeline :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline>
+              </template>
+              <template v-else-if="item.type === 'pip-corner'">
+                <pipeline-corner :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline-corner>
+              </template>
+              <template v-else-if="item.type === 'progress'">
+                <progress-bar :obj="item" :index="index"></progress-bar>
+              </template>
+              <template v-else-if="item.type === 'liquidfill'">
+                <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :index="index"></liquidfill>
+              </template>
+              <template v-else-if="item.type === 'upload'">
+                <img :src="uploadIp + '/v2/upDown/preview?id=' + item.uploadId" :id="item.id">
+              </template>
+            </VueDragResize>
+          </div>
+        </drop>
+      </vue-draggable-resizable>
+    </div>
     <div class="contextmenu-con" v-show="contextmenuShow" @mouseleave="contextMenuClose" :style="{left: contextMenu.x + 'px', top: contextMenu.y + 'px'}">
       <ul>
         <li @click="moveUp">上移一层</li>
@@ -169,7 +248,7 @@
         <li v-show="!contextMenuItem.lock" @click="itemLock">锁定</li>
         <li v-show="contextMenuItem.lock" @click="itemUnlock">解锁</li>
         <li @click="itemCopy">复制</li>
-        <li @click="delItem">删除</li>
+        <li @click="delItem(contextMenuItemIndex)">删除</li>
       </ul>
     </div>
     <div class="config-right" @mousedown.stop :class="{'config-right-hide': !rightShow}">
@@ -184,11 +263,17 @@
         <TabPane label="基本设置" name="name1">
           <div class="config-right-from-con">
             <Form v-show="currentItem.type === undefined" :model="basicSettings" label-position="top">
+              <FormItem label="拖动画布">
+                <i-switch v-model="backDragFlag"></i-switch>
+              </FormItem>
               <FormItem label="画布宽">
-                <Input v-model="basicSettings.width" style="width:100px"></Input>
+                <InputNumber :min="1" v-model="basicSettings.width" style="width:100px"></InputNumber>
               </FormItem>
               <FormItem label="画布高">
-                <Input v-model="basicSettings.height" style="width:100px"></Input>
+                <InputNumber :min="1" v-model="basicSettings.height" style="width:100px"></InputNumber>
+              </FormItem>
+              <FormItem label="显示辅助线">
+                <i-switch v-model="basicSettings.showAuxiliaryLine"></i-switch>
               </FormItem>
               <FormItem label="运行页面是否自适应">
                 <i-switch v-model="basicSettings.adapt">
@@ -205,18 +290,21 @@
                 <Button type="primary" v-show="!currentItem.lock" @click="currentItem.lock = true">锁定</Button>
                 <Button type="primary" v-show="currentItem.lock" @click="currentItem.lock = false">解锁</Button>
               </FormItem>
-              <FormItem v-show="['text', 'link'].includes(currentItem.type)" label="文本内容">
+              <FormItem v-show="['text', 'link'].includes(currentItem.type) || ['value', 'led'].includes(currentItem.class)" label="文本内容">
                 <Input v-model="currentItem.text" type="textarea" :rows="3"></Input>
               </FormItem>
               <FormItem v-show="['link'].includes(currentItem.type)" label="链接地址">
                 <Input v-model="currentItem.href" type="textarea" :rows="3"></Input>
               </FormItem>
-              <FormItem v-show="['text', 'datetime', 'link', 'progress', 'liquidfill'].includes(currentItem.type) || ['value', 'led'].includes(currentItem.class)" label="字体大小">
+              <FormItem v-show="['text', 'datetime', 'link', 'progress', 'liquidfill'].includes(currentItem.type) || ['value', 'led'].includes(currentItem.class)" :label="['value', 'led'].includes(currentItem.class) ? '数值字体大小' : '字体大小'">
                 <Select v-model="currentItem.fontSize" style="width:80px">
                   <Option v-for="(item, index) in fontSizes" :value="item + ''" :key="index">{{item}}</Option>
                 </Select>
               </FormItem>
-              <FormItem v-show="['value', 'led'].includes(currentItem.class)" label="单位字体大小">
+              <FormItem v-show="['value', 'led'].includes(currentItem.class)" label="数值位数">
+                <InputNumber :min="1" v-model="currentItem.numDigits"></InputNumber>
+              </FormItem>
+              <FormItem v-show="['value', 'led'].includes(currentItem.class)" label="字体大小">
                 <Select v-model="currentItem.unitFontSize" style="width:80px">
                   <Option v-for="(item, index) in fontSizes" :value="item + ''" :key="index">{{item}}</Option>
                 </Select>
@@ -259,6 +347,9 @@
                 </FormItem>
                 <FormItem label="字体颜色">
                   <ColorPicker v-model="currentItem.color" alpha recommend />
+                </FormItem>
+                <FormItem v-show="['value', 'led'].includes(currentItem.class)" label="数值颜色">
+                  <ColorPicker v-model="currentItem.numColor" alpha recommend />
                 </FormItem>
                 <FormItem label="文本样式" class="config-font-style-a-con">
                   <a href="javascript:void(0)" :class="{'active': currentItem.fontWeight === 'bold'}" @click="currentItem.fontWeight = currentItem.fontWeight === 'normal' ? 'bold' : 'normal'">
@@ -320,6 +411,9 @@
                   <Option v-for="item in lineType" :value="item.value" :key="item.value">{{ item.text }}</Option>
                 </Select>
               </FormItem>
+              <FormItem label="边框圆角">
+                <InputNumber :min="0" v-model="currentItem.borderRadius"></InputNumber>
+              </FormItem>
               <FormItem label="透明度">
                 <Slider v-model="currentItem.transparency" :max="10" :show-input="true"></Slider>
               </FormItem>
@@ -327,12 +421,12 @@
                 <Slider v-model="currentItem.rotate" :max="360" :show-input="true"></Slider>
               </FormItem>
               <FormItem label="大小">
-                宽 <Input v-model="currentItem.width" style="width:80px"></Input>
-                高 <Input v-model="currentItem.height" style="width:80px"></Input>
+                宽 <InputNumber :min="1" v-model="currentItem.width" style="width:80px"></InputNumber>
+                高 <InputNumber :min="1" v-model="currentItem.height" style="width:80px"></InputNumber>
               </FormItem>
               <FormItem label="位置">
-                &nbsp;X&nbsp;<Input v-model="currentItem.left" style="width:80px"></Input>
-                &nbsp;Y&nbsp;<Input v-model="currentItem.top" style="width:80px"></Input>
+                &nbsp;X&nbsp;<InputNumber :min="1" v-model="currentItem.left" style="width:80px"></InputNumber>
+                &nbsp;Y&nbsp;<InputNumber :min="1" v-model="currentItem.top" style="width:80px"></InputNumber>
               </FormItem>
             </Form>
           </div>
@@ -341,16 +435,16 @@
           <div class="config-right-from-con">
             <Form v-show="['pip-h', 'pip-corner', 'progress', 'liquidfill'].includes(currentItem.type) || ['value', 'led', 'switch', 'echart-line', 'echart-bar', 'echart-pie', 'echart-gauge'].includes(currentItem.class)" :model="currentItem" label-position="top">
               <FormItem label="设备">
-                <Select v-model="currentItem.deviceId" @on-change="getSensorLis(currentItem.deviceId)">
+                <Select v-model="currentItem.deviceId" @on-change="getSensorLis">
                   <Option v-for="(item, index) in deviceList" :value="item.id" :key="index">{{item.deviceName}}</Option>
                 </Select>
               </FormItem>
               <FormItem label="传感器">
-                <Select v-model="currentItem.sensorId" :multiple="['echart-line', 'echart-bar', 'echart-pie'].includes(currentItem.class)">
+                <Select v-model="currentItem.sensorId" :multiple="['pip-h', 'pip-corner'].includes(currentItem.type) || ['echart-line', 'echart-bar', 'echart-pie'].includes(currentItem.class)">
                   <Option v-for="(item, index) in sensorList" :value="item.id" :key="index">{{item.sensorName}}</Option>
                 </Select>
               </FormItem>
-              <FormItem label="单位">
+              <FormItem v-show="['value', 'led', 'echart-line', 'echart-bar', 'echart-pie', 'echart-gauge'].includes(currentItem.class)" label="单位">
                 <Input v-model="currentItem.unit"></Input>
               </FormItem>
               <FormItem v-show="['value'].includes(currentItem.class)" label="是否显示状态">
@@ -443,7 +537,17 @@ export default {
       canvasItems: this.$store.state.canvasItems, // 动画
       svgItemsTypeTitle: '容器', // 图库类别名
       items: [],
-      currentItem: { borderColor: 'rgba(0,0,0,0)', color: 'rgba(0,0,0,1)', backColor: 'rgba(255,255,255,0)', fontColor: 'rgba(255,255,255,1)', pipelineColor: 'rgba(206,218,239,1)', normalStatusColor: 'rgba(25,201,210,1)', errorStatusColor: 'rgba(235,98,51,1)' }, // 当前拖拽对象
+      defalutItem: { // 带默认属性的对象
+        borderColor: 'rgba(0,0,0,0)',
+        color: 'rgba(0,0,0,1)',
+        backColor: 'rgba(255,255,255,0)',
+        fontColor: 'rgba(255,255,255,1)',
+        pipelineColor: 'rgba(206,218,239,1)',
+        normalStatusColor: 'rgba(25,201,210,1)',
+        errorStatusColor: 'rgba(235,98,51,1)',
+        numColor: 'rgba(0,0,0,1)'
+      },
+      currentItem: { borderColor: 'rgba(0,0,0,0)', color: 'rgba(0,0,0,1)', backColor: 'rgba(255,255,255,0)', fontColor: 'rgba(255,255,255,1)', pipelineColor: 'rgba(206,218,239,1)', normalStatusColor: 'rgba(25,201,210,1)', errorStatusColor: 'rgba(235,98,51,1)', numColor: 'rgba(0,0,0,1)' }, // 当前拖拽对象
       contextMenuItem: {}, // 打开右键菜单的对象
       currentItemIndex: 0, // 当前拖拽对象位置
       contextMenuItemIndex: 0, // 打开右键菜单的对象对象位置
@@ -459,6 +563,7 @@ export default {
         width: 0,
         height: 0,
         adapt: false,
+        showAuxiliaryLine: true,
         backColor: 'rgba(255,255,255,0)'
       },
       lineType: this.$store.state.lineType, // 线条样式
@@ -485,7 +590,12 @@ export default {
       startX: 0, // 框选线开始点left
       startY: 0, // 框选线开始点top
       selItems: [], // 选中的块
-      fontSizes: [10, 12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 48, 60, 72, 82, 96, 120, 200] // 字体大小
+      fontSizes: [10, 12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 48, 60, 72, 82, 96, 120, 200], // 字体大小
+      direction: { left: false, right: false, top: false, bottom: false }, // 按键方向
+      backDragFlag: false, // 是否拖动画布
+      backDragX: 60, // 画布left
+      backDragY: 0, // 画布top
+      headerH: 50 // 顶部栏高度
     }
   },
   methods: {
@@ -496,6 +606,7 @@ export default {
       console.log(111111111111)
       console.log(this.method === 'add')
       let temp = JSON.parse(this.dataJson)
+      this.items = []
       if (flag === 'add') {
         this.basicSettings.name = temp.name
         this.basicSettings.cover = temp.cover
@@ -532,10 +643,12 @@ export default {
       temp.top = evt.offsetY
       temp.borderWidth = 0
       temp.borderColor = 'rgba(0,0,0,0)'
+      temp.borderRadius = 0
       temp.transparency = 10
       temp.rotate = 0
       temp.active = true
       temp.lock = false
+      temp.showFlag = true
       // console.log(temp)
       this.items.push(temp)
       this.currentItem = temp
@@ -551,10 +664,12 @@ export default {
         for (let temp of this.items) {
           temp.active = false
         }
+        this.currentItem = this.defalutItem
         this.$nextTick(function () {
           this.currentItem = item
           this.currentItem.active = true
           this.currentItemIndex = index
+          this.getSensorLis()
         })
       }
     },
@@ -563,8 +678,9 @@ export default {
     * @param {Num} index 位置
     */
     deactivatedItem: function (index) {
+      console.log('deactivatedItem')
       this.items[index].active = false
-      this.currentItem = {}
+      this.currentItem = this.defalutItem
     },
     /**
     * @desc 移动结束
@@ -585,6 +701,15 @@ export default {
       this.currentItem.height = e.height
     },
     /**
+    * @desc 画布移动结束
+    * @param {Number} left 移动数据left
+    * @param {Number} top 移动数据top
+    */
+    backDragStop: function (left, top) {
+      this.backDragX = left
+      this.backDragY = top
+    },
+    /**
     * @desc 点击编辑区，开始画线
     * @param {Object} e 点击数据
     */
@@ -592,6 +717,10 @@ export default {
       // console.log(e)
       // 如果线显示，清空线数据
       if (this.showSelDiv) {
+        for (const iterator of this.selItems) {
+          iterator.showFlag = true
+        }
+        this.selItems = []
         this.showSelDiv = false
         this.selDivX = 0
         this.selDivY = 0
@@ -599,35 +728,38 @@ export default {
         this.selDivHeight = 0
         this.translateX = 0
         this.translateY = 0
-        this.selItems = []
       }
       const that = this
-      if (Util.isEmpty(this.currentItem.type)) {
-        this.startX = e.x
-        this.startY = e.layerY
-        this.selDivX = e.x
-        this.selDivY = e.layerY
+      if (Util.isEmpty(this.currentItem.type) && !this.backDragFlag) {
+        this.startX = e.x - this.backDragX
+        this.startY = e.y - this.headerH - this.backDragY
+        this.selDivX = e.x - this.backDragX
+        this.selDivY = e.y - this.headerH - this.backDragY
         this.showSelDiv = true
         // 鼠标移动改变线宽高
         document.onmousemove = function (evt) {
           // console.log(evt)
-          let x = Math.min(that.startX, evt.x)
-          let y = Math.min(that.startY, evt.layerY)
-          that.selDivWidth = Math.abs(evt.x - that.startX)
-          that.selDivHeight = Math.abs(evt.layerY - that.startY)
+          let eY = evt.y - that.headerH
+          let tempX = Math.abs(evt.x - that.backDragX)
+          let tempY = Math.abs(eY - that.backDragY)
+          // let tempY = evt.layerY
+          let x = Math.min(that.startX, tempX)
+          let y = Math.min(that.startY, tempY)
+          that.selDivWidth = Math.abs(tempX - that.startX)
+          that.selDivHeight = Math.abs(tempY - that.startY)
           that.selDivX = x
           that.selDivY = y
         }
         // 鼠标放开清除事件
         document.onmouseup = function () {
-          document.onmousemove = null
-          document.onmouseup = null
           if (that.selDivWidth > 5) {
             that.selFinished = true
             that.setSelItems()
           } else {
             that.showSelDiv = false
           }
+          document.onmousemove = null
+          document.onmouseup = null
         }
       }
     },
@@ -639,28 +771,27 @@ export default {
         let st = iterator.height + iterator.top
         if (sl > this.selDivX && st > this.selDivY && iterator.left < this.selDivX + this.selDivWidth && iterator.top < this.selDivY + this.selDivHeight) {
           this.selItems.push(iterator)
-          iterator.active = true
+          // iterator.active = true
+          iterator.showFlag = false
         }
       }
     },
     /**
-    * @desc 框选线移动
+    * @desc 框选线移动结束
     * @param {Object} e 移动数据
     */
-    selDragging: function (e) {
-      let x = e.left - this.selDivX
-      let y = e.top - this.selDivY
+    selDragStop: function (e) {
+      for (const iterator of this.selItems) {
+        iterator.left = iterator.left + (e.left - this.selDivX)
+        iterator.top = iterator.top + (e.top - this.selDivY)
+      }
       this.selDivX = e.left
       this.selDivY = e.top
-      for (const iterator of this.selItems) {
-        iterator.left += x
-        iterator.top += y
-      }
     },
     /**
     * @desc 打开右键菜单
     * @param {Object} item 要打开右键菜单的对象
-    * @param {NUmber} index 对象位置
+    * @param {Number} index 对象位置
     * @param {Object} event 事件
     */
     showContextMenu: function (item, index, event) {
@@ -738,9 +869,10 @@ export default {
     },
     /**
     * @desc 删除对象
+    * @param {Number} index 对象位置
     */
-    delItem: function () {
-      this.items.splice(this.contextMenuItemIndex, 1)
+    delItem: function (index) {
+      this.items.splice(index, 1)
       this.contextmenuShow = false
       this.currentItem = {}
     },
@@ -760,6 +892,7 @@ export default {
         borderWidth: item.borderWidth + 'px',
         borderStyle: item.borderStyle,
         borderColor: item.borderColor,
+        borderRadius: item.borderRadius + 'px',
         opacity: item.transparency / 10,
         transform: `rotate(${item.rotate}deg)`
       }
@@ -869,19 +1002,19 @@ export default {
     },
     /**
     * @desc 获取设备下面的传感器
-    * @param {Number} deviceId 返回数据
     */
-    getSensorLis (deviceId) {
-      this.$api.get('/v2/sensor/list?deviceId=' + deviceId, {}, r => {
-        this.sensorList = r.data
-      })
+    getSensorLis () {
+      if (!Util.isEmpty(this.currentItem.deviceId)) {
+        this.$api.get('/v2/sensor/list?deviceId=' + this.currentItem.deviceId, {}, r => {
+          this.sensorList = r.data
+        })
+      }
     },
     /**
     * @desc 获取上传图片
     */
     getUploadImgs () {
       this.$api.get('/v2/picture/list?clientId=' + this.clientId, {}, r => {
-        console.log(r)
         this.uploadImgs = r.data
       })
     },
@@ -892,6 +1025,7 @@ export default {
       this.$Spin.show()
       let obj = { basicSettings: this.basicSettings, items: this.items }
       let jsonStr = JSON.stringify(obj)
+      console.log(jsonStr)
       if (this.method === 'add') {
         let temp = Util.getCurrentDate()
         temp = temp.replace(/-/g, '/')
@@ -953,6 +1087,50 @@ export default {
     const that = this
     // 时间实时更新
     window.setInterval(that.setNowDatetime, 1000)
+    // 绑定键盘事件,删除键和方向键
+    document.onkeydown = function (e) {
+      let key = window.event.keyCode
+      if (!Util.isEmpty(that.currentItem.type)) {
+        if (key === 46) {
+          that.delItem(that.currentItemIndex)
+        } else if (key === 37) {
+          that.direction.left = true
+          return false
+        } else if (key === 38) {
+          that.direction.top = true
+          return false
+        } else if (key === 39) {
+          that.direction.right = true
+          return false
+        } else if (key === 40) {
+          that.direction.bottom = true
+          return false
+        }
+      }
+    }
+    document.onkeyup = function (e) {
+      let key = window.event.keyCode
+      if (key === 37) {
+        that.direction.left = false
+      } else if (key === 38) {
+        that.direction.top = false
+      } else if (key === 39) {
+        that.direction.right = false
+      } else if (key === 40) {
+        that.direction.bottom = false
+      }
+    }
+    setInterval(function () {
+      if (that.direction.left) {
+        that.currentItem.left -= 1
+      } else if (that.direction.top) {
+        that.currentItem.top -= 1
+      } else if (that.direction.right) {
+        that.currentItem.left += 1
+      } else if (that.direction.bottom) {
+        that.currentItem.top += 1
+      }
+    }, 50)
   }
 }
 </script>

@@ -14,7 +14,7 @@
             <sensor-value :obj="item" :val="item.val" :index="index"></sensor-value>
           </template>
           <template v-else-if="item.class === 'led'">
-            <led :obj="item" :index="index"></led>
+            <led :obj="item" :val="item.val" :index="index"></led>
           </template>
           <template v-else-if="item.class === 'echart-line'">
             <echart-line :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :smoothFlag="item.smoothFlag" :areaFlag="item.areaFlag" :dataZoom="item.dataZoom" :markLine="item.markLine" :stackFlag="item.stackFlag" :index="index"></echart-line>
@@ -140,7 +140,7 @@ export default {
     init: function () {
       if (!Util.isEmpty(localStorage.configJson)) {
         let temp = JSON.parse(localStorage.configJson)
-        localStorage.configJson = ''
+        // localStorage.configJson = ''
         this.initConfig(temp)
       } else {
         this.$api.put('/v2/apps/graphics/selOpenGraphics', {}, r => {
@@ -188,7 +188,7 @@ export default {
     * @desc 获取传感器数据
     */
     getSensorData: function () {
-      this.$api.put('/v2/apps/graphics/putSensorData', { sensorJson: this.sensorIds.join(',') }, r => {
+      /* this.$api.put('/v2/apps/graphics/putSensorData', { sensorJson: this.sensorIds.join(',') }, r => {
         // console.log(r)
         if (r.data.status) {
           for (const iterator of r.data.data) {
@@ -200,6 +200,34 @@ export default {
                 }
               }
             }
+          }
+        }
+      }) */
+      this.$api.put('/v2/apps/graphics/putSensorData', { sensorJson: this.sensorIds.join(',') }, r => {
+        // console.log(r)
+        if (r.data.status) {
+          for (const iterator of this.sensorItems) {
+            let arr = []
+            let ids = []
+            if (iterator.sensorId instanceof Array) {
+              ids = iterator.sensorId
+            } else {
+              ids.push(iterator.sensorId)
+            }
+            // console.log(ids)
+            for (const item of ids) {
+              for (const itm of r.data.data) {
+                for (const key in itm) {
+                  if (itm.hasOwnProperty(key)) {
+                    if (key === item) {
+                      arr.push(itm[key])
+                    }
+                  }
+                }
+              }
+            }
+            this.$set(iterator, 'val', arr.join(','))
+            // console.log(iterator.val)
           }
         }
       })
@@ -218,6 +246,7 @@ export default {
         borderWidth: item.borderWidth + 'px',
         borderStyle: item.borderStyle,
         borderColor: item.borderColor,
+        borderRadius: item.borderRadius + 'px',
         opacity: item.transparency / 10,
         transform: `rotate(${item.rotate}deg)`
       }

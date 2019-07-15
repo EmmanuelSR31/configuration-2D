@@ -33,8 +33,9 @@
       padding: 12px 0;
       text-align: center;
       font-size: .15rem;
+      cursor: pointer;
       a{
-        color: #999ea8;
+        color: #ddd;
       }
       i{
         font-size: .3rem;
@@ -75,7 +76,8 @@
 }
 .config-center{
   height: calc(100% - 50px);
-  margin-left: 60px;
+}
+.config-center-bg{
   background: url(/img/drag-bg.png) #f5f6fa center repeat;
 }
 .svg-div{
@@ -298,4 +300,16 @@
 }
 .led-con{
   font-family: 'lcdd';
+}
+.back-drag-able{
+  cursor: move;
+}
+.sensor-status{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
 }

@@ -1,6 +1,6 @@
 <template>
 <div :style="itemStyle()">
-  {{val}}<span :style="{fontSize: obj.unitFontSize + 'px'}">{{unit}}</span>
+  {{obj.text}}<span :style="numStyle()">{{val}}</span>{{obj.unit}}
   <div v-if="obj.showStatus === 'true'" class="sensor-status" :style="{backgroundColor: obj.normalStatusColor}"></div>
 </div>
 </template>
@@ -13,8 +13,7 @@ export default {
   },
   data () {
     return {
-      val: '25.0',
-      unit: 'c'
+      val: '25.0'
     }
   },
   methods: {
@@ -27,7 +26,7 @@ export default {
       let temp = {
         color: this.obj.color,
         height: this.obj.height + 'px',
-        fontSize: this.obj.fontSize + 'px',
+        fontSize: this.obj.unitFontSize + 'px',
         fontWeight: this.obj.fontWeight,
         fontStyle: this.obj.fontStyle,
         textDecoration: this.obj.textDecoration,
@@ -36,6 +35,19 @@ export default {
       if (this.obj.showStatus === 'true') {
         temp.paddingRight = '22px'
         temp.position = 'relative'
+      }
+      return temp
+    },
+    /**
+    * @desc 生成数值样式
+    */
+    numStyle: function () {
+      let temp = {
+        display: 'inline-block',
+        width: this.obj.fontSize * this.obj.numDigits / 1.5 + 'px',
+        color: this.obj.numColor,
+        fontSize: this.obj.fontSize + 'px',
+        textAlign: 'center'
       }
       return temp
     }
@@ -47,13 +59,5 @@ export default {
 </script>
 
 <style lang="scss">
-.sensor-status{
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-}
+
 </style>

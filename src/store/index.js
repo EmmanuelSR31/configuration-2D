@@ -615,7 +615,7 @@ const state = {
     }
   ],
   headerHeight: 100, // 头部高度
-  uploadIp: 'http://192.168.0.35:6006', // 上传ip地址
+  uploadIp: 'http://king-break.imwork.net:9007/device', // 上传ip地址
   commonItems: [
     {
       name: '文本',
@@ -720,12 +720,15 @@ const state = {
       type: 'chart',
       class: 'value',
       img: '/img/chart/value.png',
+      text: '',
       fontSize: '12',
       unitFontSize: '12',
       fontWeight: 'normal',
       fontStyle: 'normal',
       textDecoration: 'none',
+      numDigits: 3,
       color: 'rgba(0,0,0,1)',
+      numColor: 'rgba(0,0,0,1)',
       backColor: 'rgba(255,255,255,0)',
       textAlign: 'left',
       lineHeight: 'normal',
@@ -740,12 +743,15 @@ const state = {
       type: 'chart',
       class: 'led',
       img: '/img/chart/led.png',
+      text: '',
       fontSize: '18',
       unitFontSize: '12',
       fontWeight: 'normal',
       fontStyle: 'normal',
       textDecoration: 'none',
+      numDigits: 3,
       color: 'rgba(255,99,71,1)',
+      numColor: 'rgba(255,99,71,1)',
       backColor: 'rgba(255,255,255,0)',
       textAlign: 'left',
       lineHeight: 'normal',
