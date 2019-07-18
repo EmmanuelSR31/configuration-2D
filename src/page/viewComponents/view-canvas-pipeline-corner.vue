@@ -12,7 +12,8 @@ export default {
     index: Number,
     color: String, // 管道颜色
     pipelineColor: String, // 管道背景色
-    pipelineHeight: Number // 管道宽度
+    pipelineHeight: Number, // 管道宽度
+    val: String
   },
   data () {
     return {
@@ -147,31 +148,7 @@ export default {
     this.init()
   },
   watch: {
-    width: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    height: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    color: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    pipelineColor: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    pipelineHeight: function (newVal, oldVal) {
+    val: function (newVal, oldVal) {
       const that = this
       this.$nextTick(function () {
         that.init()

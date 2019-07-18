@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.0" id="图层_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36.086px"
+	 height="36.086px" viewBox="0 0 36.086 36.086" enable-background="new 0 0 36.086 36.086" xml:space="preserve">
+<switch>
+	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+		<i:pgfRef  xlink:href="#adobe_illustrator_pgf">
+		</i:pgfRef>
+	</foreignObject>
+	<g i:extraneous="self">
+		<g>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="4.882813e-004" y1="18.043" x2="36.0864" y2="18.043">
+				<stop  offset="0" style="stop-color:#B3B3B3"/>
+				<stop  offset="1" style="stop-color:#333333"/>
+			</linearGradient>
+			<circle fill="#2B3951" stroke="url(#SVGID_1_)" stroke-width="2" stroke-miterlimit="10" cx="18.043" cy="18.043" r="17.043"/>
+			<g>
+				<g>
+					
+						<radialGradient id="SVGID_2_" cx="17.9912" cy="21.4272" r="15.7271" fx="5.1682" fy="21.1211" gradientTransform="matrix(0.9804 0 0 0.9804 1.2963 -5.1354)" gradientUnits="userSpaceOnUse">
+						<stop  offset="0" style="stop-color:#F8FF2A"/>
+						<stop  offset="1" style="stop-color:#4CB234"/>
+					</radialGradient>
+					<circle fill="url(#SVGID_2_)" cx="18.043" cy="18.043" r="15.176"/>
+					
+						<radialGradient id="SVGID_3_" cx="17.0811" cy="23.6421" r="15.925" gradientTransform="matrix(0.9804 0 0 0.9804 1.2963 -5.1354)" gradientUnits="userSpaceOnUse">
+						<stop  offset="0" style="stop-color:#A8FF00"/>
+						<stop  offset="1" style="stop-color:#4CB234"/>
+					</radialGradient>
+					
+						<circle fill="none" stroke="url(#SVGID_3_)" stroke-width="0.8905" stroke-miterlimit="10" cx="18.043" cy="18.043" r="15.176"/>
+				</g>
+				<defs>
+					<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="2.421" y="2.421" width="31.243" height="31.243">
+						
+							<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+					</filter>
+				</defs>
+				<mask maskUnits="userSpaceOnUse" x="2.421" y="2.421" width="31.243" height="31.243" id="SVGID_4_">
+					<g filter="url(#Adobe_OpacityMaskFilter)">
+						
+							<image overflow="visible" width="37" height="37" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEASABIAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
+EAMCAwYAAAG3AAACEgAAAu7/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
+Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
+JjAjHh4eHiMwKy4nJycuKzU1MDA1NUBAP0BAQEBAQEBAQEBAQP/CABEIACYAJgMBIgACEQEDEQH/
+xACQAAACAgMBAAAAAAAAAAAAAAAABgQHAQIDBQEBAAAAAAAAAAAAAAAAAAAAABAAAQQCAgIDAAAA
+AAAAAAAABQECAwQABjAVEBITBxcRAAIBAgMCCQ0BAAAAAAAAAAECAwAEESEFEiIQMVFxgZFS0hMg
+QaGxMmJyorIzU5MkNBIBAAAAAAAAAAAAAAAAAAAAMP/aAAwDAQACEQMRAAAAWZO9qCKvXDFKVJwM
+1gU9ahNweWKIpBv2AYlYCCAf/9oACAECAAEFAOH/2gAIAQMAAQUA4f/aAAgBAQABBQA6VKRmxFDa
+y2LpuzI0rW2oTncF8iE9tudatFWiy/Rgv1nAXt2TVnMTdPNhzf0eUm4VuA0pUJV8OHaYmp29hS5+
+NinQsZtJVX7B9SsZNZ/iZn//2gAIAQICBj8AH//aAAgBAwIGPwAf/9oACAEBAQY/ANRjjvJ0RLqd
+VVZXAAEjAAANW1BdXKR4jfaWQAg8mdYjVZyeTxH71Y3V1c7HbWaQj6q/3XH7n71X1u2Phrdzu/MJ
+Wy6aWKJQqqMMuB7edAyuCM6XSD7LybvwZt6hWshjm1xNs/tfyLY+bMfJJV7eDNVvLgOB2TK1JPby
+Bgwxwx4HllcbYG6o48aGqknxBJtjm4sOqtSJlUf1z5EN+RvdrHSZCx5AH2PSoFZgYUTqcpEmPE4f
+Do3cK+8nU/cr/9k=" transform="matrix(1 0 0 1 -0.5464 -0.5)">
+						</image>
+					</g>
+				</mask>
+				<g opacity="0.76" mask="url(#SVGID_4_)">
+					<circle fill="#00FF33" cx="18.043" cy="18.043" r="15.176"/>
+					<circle fill="none" stroke="#00FF33" stroke-width="0.8905" stroke-miterlimit="10" cx="18.043" cy="18.043" r="15.176"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</switch>
+
+</svg>

@@ -14,7 +14,13 @@ export default {
     index: Number,
     width: Number,
     height: Number,
-    whiteFlag: Boolean // 白色图表线条文字
+    whiteFlag: Boolean, // 白色图表线条文字
+    unit: String,
+    max: Number,
+    axisLineWidth: Number,
+    showAxisLabel: Boolean,
+    axisLabelDistance: Number,
+    detailFontSize: Number
   },
   data () {
     return {
@@ -26,6 +32,7 @@ export default {
       if (this.charts) {
         this.charts.dispose()
       }
+      const that = this
       this.charts = echarts.init(document.getElementById('chartGauge' + this.index))
       let option = {
         tooltip: {
@@ -33,8 +40,26 @@ export default {
         },
         series: [{
           type: 'gauge',
-          data: [{ value: 223, name: '传感器' }],
-          max: 240
+          data: [{ value: 80 }],
+          max: this.max,
+          axisLine: {
+            lineStyle: {
+              width: this.axisLineWidth
+            }
+          },
+          splitLine: {
+            length: this.axisLineWidth
+          },
+          axisLabel: {
+            show: this.showAxisLabel,
+            distance: this.axisLabelDistance
+          },
+          detail: {
+            fontSize: this.detailFontSize,
+            formatter: function (value) {
+              return value + that.unit
+            }
+          }
         }]
       }
       if (this.whiteFlag) {
@@ -72,6 +97,42 @@ export default {
       })
     },
     whiteFlag: function (newVal, oldVal) {
+      const that = this
+      this.$nextTick(function () {
+        that.init()
+      })
+    },
+    max: function (newVal, oldVal) {
+      const that = this
+      this.$nextTick(function () {
+        that.init()
+      })
+    },
+    unit: function (newVal, oldVal) {
+      const that = this
+      this.$nextTick(function () {
+        that.init()
+      })
+    },
+    axisLineWidth: function (newVal, oldVal) {
+      const that = this
+      this.$nextTick(function () {
+        that.init()
+      })
+    },
+    showAxisLabel: function (newVal, oldVal) {
+      const that = this
+      this.$nextTick(function () {
+        that.init()
+      })
+    },
+    axisLabelDistance: function (newVal, oldVal) {
+      const that = this
+      this.$nextTick(function () {
+        that.init()
+      })
+    },
+    detailFontSize: function (newVal, oldVal) {
       const that = this
       this.$nextTick(function () {
         that.init()

@@ -12,9 +12,7 @@ export default {
   props: {
     obj: Object,
     index: Number,
-    width: Number,
-    height: Number,
-    whiteFlag: Boolean // 白色图表线条文字
+    val: Number
   },
   data () {
     return {
@@ -26,21 +24,37 @@ export default {
       if (this.charts) {
         this.charts.dispose()
       }
+      const that = this
       this.charts = echarts.init(document.getElementById('chartGauge' + this.index))
-      let num = 210
-      let num1 = 20
-      let maxTemp = 240
       let option = {
         tooltip: {
           trigger: 'item'
         },
         series: [{
           type: 'gauge',
-          data: [{ value: Math.ceil(Math.random() * num1) + num, name: '电压' }],
-          max: maxTemp
+          data: [{ value: this.val }],
+          max: this.obj.max,
+          axisLine: {
+            lineStyle: {
+              width: this.obj.axisLineWidth
+            }
+          },
+          splitLine: {
+            length: this.obj.axisLineWidth
+          },
+          axisLabel: {
+            show: this.obj.showAxisLabel,
+            distance: this.obj.axisLabelDistance
+          },
+          detail: {
+            fontSize: this.obj.detailFontSize,
+            formatter: function (value) {
+              return value + that.obj.unit
+            }
+          }
         }]
       }
-      if (this.whiteFlag) {
+      if (this.obj.whiteFlag) {
         option.series[0].title = {
           color: '#fff'
         }
@@ -62,22 +76,14 @@ export default {
     this.init()
   },
   watch: {
-    width: function (newVal, oldVal) {
+    val: function (newVal, oldVal) {
       const that = this
       this.$nextTick(function () {
-        that.init()
-      })
-    },
-    height: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    whiteFlag: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
+        that.charts.setOption({
+          series: [{
+            data: [{ value: that.val }]
+          }]
+        })
       })
     }
   }

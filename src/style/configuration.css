@@ -3,6 +3,7 @@
 }
 
 .config-header {
+  width: 100%;
   height: 50px;
   line-height: 50px;
   padding: 0 20px;
@@ -34,6 +35,7 @@
 .config-left {
   left: 0;
   width: 60px;
+  z-index: 5;
 }
 
 .config-left ul li {
@@ -354,4 +356,41 @@
 
 .back-drag-able {
   cursor: move;
+}
+
+.sensor-status {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.svg-switch-con {
+  cursor: pointer;
+}
+
+.progress-con {
+  position: relative;
+}
+
+.progress-outer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  height: 100%;
 }

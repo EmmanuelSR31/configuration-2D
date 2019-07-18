@@ -16,7 +16,8 @@ export default {
     fontSize: String,
     index: Number,
     width: Number,
-    height: Number
+    height: Number,
+    unit: String
   },
   data () {
     return {
@@ -51,6 +52,7 @@ export default {
             }
           },
           label: {
+            formatter: '60' + this.unit + '\n60%',
             fontSize: this.fontSize
           }
         }]
@@ -87,6 +89,12 @@ export default {
       })
     },
     fontSize: function (newVal, oldVal) {
+      const that = this
+      this.$nextTick(function () {
+        that.init()
+      })
+    },
+    unit: function (newVal, oldVal) {
       const that = this
       this.$nextTick(function () {
         that.init()

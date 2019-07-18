@@ -109,7 +109,7 @@
                       <echart-pie :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :annular="item.annular" :index="index"></echart-pie>
                     </template>
                     <template v-else-if="item.class === 'echart-gauge'">
-                      <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :index="index"></echart-gauge>
+                      <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :max="item.max" :unit="item.unit" :axisLineWidth="item.axisLineWidth" :showAxisLabel="item.showAxisLabel" :axisLabelDistance="item.axisLabelDistance" :detailFontSize="item.detailFontSize" :index="index"></echart-gauge>
                     </template>
                   </template>
                   <template v-else-if="item.type === 'text'">
@@ -153,7 +153,7 @@
                     <progress-bar :obj="item" :index="index"></progress-bar>
                   </template>
                   <template v-else-if="item.type === 'liquidfill'">
-                    <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :index="index"></liquidfill>
+                    <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :unit="item.unit" :index="index"></liquidfill>
                   </template>
                   <template v-else-if="item.type === 'upload'">
                     <img :src="uploadIp + '/v2/upDown/preview?id=' + item.uploadId" :id="item.id">
@@ -185,7 +185,7 @@
                   <echart-pie :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :annular="item.annular" :index="index"></echart-pie>
                 </template>
                 <template v-else-if="item.class === 'echart-gauge'">
-                  <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :index="index"></echart-gauge>
+                  <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :max="item.max" :unit="item.unit" :axisLineWidth="item.axisLineWidth" :showAxisLabel="item.showAxisLabel" :axisLabelDistance="item.axisLabelDistance" :detailFontSize="item.detailFontSize" :index="index"></echart-gauge>
                 </template>
               </template>
               <template v-else-if="item.type === 'text'">
@@ -229,7 +229,7 @@
                 <progress-bar :obj="item" :index="index"></progress-bar>
               </template>
               <template v-else-if="item.type === 'liquidfill'">
-                <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :index="index"></liquidfill>
+                <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :unit="item.unit" :index="index"></liquidfill>
               </template>
               <template v-else-if="item.type === 'upload'">
                 <img :src="uploadIp + '/v2/upDown/preview?id=' + item.uploadId" :id="item.id">
@@ -394,6 +394,33 @@
                 <FormItem v-show="['echart-pie'].includes(currentItem.class)" label="环形饼图">
                   <i-switch v-model="currentItem.annular" />
                 </FormItem>
+                <div v-show="['echart-gauge'].includes(currentItem.class)">
+                  <FormItem label="轴线宽度">
+                    <InputNumber :min="0" v-model="currentItem.axisLineWidth"></InputNumber>
+                  </FormItem>
+                  <FormItem label="是否显示标签">
+                    <i-switch v-model="currentItem.showAxisLabel" />
+                  </FormItem>
+                  <FormItem label="标签与刻度线的距离">
+                    <InputNumber :min="0" v-model="currentItem.axisLabelDistance"></InputNumber>
+                  </FormItem>
+                  <FormItem label="字体大小">
+                    <InputNumber :min="10" v-model="currentItem.detailFontSize" :active-change="false"></InputNumber>
+                  </FormItem>
+                </div>
+                <div v-show="['switch'].includes(currentItem.class)">
+                  <FormItem label="开关组">
+                    <Select v-model="currentItem.selectSwitch" style="width:120px" @on-change="selectSwitch">
+                      <Option v-for="(item, index) in switchs" :value="item.name" :key="index">{{item.name}}</Option>
+                    </Select>
+                  </FormItem>
+                  <FormItem label="开关(开)">
+                    <img :src="currentItem.onImg" height="30">
+                  </FormItem>
+                  <FormItem label="开关(关)">
+                    <img :src="currentItem.offImg" height="30">
+                  </FormItem>
+                </div>
               </div>
             </Form>
             <Form v-show="currentItem.type !== undefined" :model="currentItem" label-position="top">
@@ -433,7 +460,7 @@
         </TabPane>
         <TabPane label="高级设置" name="name2">
           <div class="config-right-from-con">
-            <Form v-show="['pip-h', 'pip-corner', 'progress', 'liquidfill'].includes(currentItem.type) || ['value', 'led', 'switch', 'echart-line', 'echart-bar', 'echart-pie', 'echart-gauge'].includes(currentItem.class)" :model="currentItem" label-position="top">
+            <Form v-if="['pip-h', 'pip-corner', 'progress', 'liquidfill'].includes(currentItem.type) || ['value', 'led', 'switch', 'echart-line', 'echart-bar', 'echart-pie', 'echart-gauge'].includes(currentItem.class)" :model="currentItem" label-position="top">
               <FormItem label="设备">
                 <Select v-model="currentItem.deviceId" @on-change="getSensorLis">
                   <Option v-for="(item, index) in deviceList" :value="item.id" :key="index">{{item.deviceName}}</Option>
@@ -444,8 +471,11 @@
                   <Option v-for="(item, index) in sensorList" :value="item.id" :key="index">{{item.sensorName}}</Option>
                 </Select>
               </FormItem>
-              <FormItem v-show="['value', 'led', 'echart-line', 'echart-bar', 'echart-pie', 'echart-gauge'].includes(currentItem.class)" label="单位">
+              <FormItem v-show="['liquidfill'].includes(currentItem.type) || ['value', 'led', 'echart-line', 'echart-bar', 'echart-pie', 'echart-gauge'].includes(currentItem.class)" label="单位">
                 <Input v-model="currentItem.unit"></Input>
+              </FormItem>
+              <FormItem v-show="['progress', 'liquidfill'].includes(currentItem.type) || ['echart-gauge'].includes(currentItem.class)" label="最大值">
+                <InputNumber v-model="currentItem.max"></InputNumber>
               </FormItem>
               <FormItem v-show="['value'].includes(currentItem.class)" label="是否显示状态">
                 <Select v-model="currentItem.showStatus">
@@ -535,6 +565,7 @@ export default {
       svgItems: this.$store.state.svgContainerItems, // 图库
       imgItems: this.$store.state.imgItems, // 图形
       canvasItems: this.$store.state.canvasItems, // 动画
+      switchs: this.$store.state.switchs, // 开关组
       svgItemsTypeTitle: '容器', // 图库类别名
       items: [],
       defalutItem: { // 带默认属性的对象
@@ -573,6 +604,7 @@ export default {
       nowDatetime: '', // 当前时间
       deviceList: [], // 设备列表
       sensorList: [], // 传感器列表
+      deviceSensors: {}, // 设备所含传感器
       uploadImgs: [], // 上传图片列表
       uploadIp: this.$store.state.uploadIp, // 上传ip地址
       baseModal: false, // 基本信息对话框是否显示
@@ -589,13 +621,14 @@ export default {
       selDivHeight: 0, // 框选线高
       startX: 0, // 框选线开始点left
       startY: 0, // 框选线开始点top
+      selTimer: null, // 框选线移动定时器
+      selTimerFlag: false, // 是否计算框选线移动位置
       selItems: [], // 选中的块
       fontSizes: [10, 12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 48, 60, 72, 82, 96, 120, 200], // 字体大小
       direction: { left: false, right: false, top: false, bottom: false }, // 按键方向
       backDragFlag: false, // 是否拖动画布
       backDragX: 60, // 画布left
-      backDragY: 0, // 画布top
-      headerH: 50 // 顶部栏高度
+      backDragY: 0 // 画布top
     }
   },
   methods: {
@@ -603,8 +636,6 @@ export default {
     * @desc 初始化
     */
     init: function (flag, id) {
-      console.log(111111111111)
-      console.log(this.method === 'add')
       let temp = JSON.parse(this.dataJson)
       this.items = []
       if (flag === 'add') {
@@ -620,6 +651,11 @@ export default {
             let temp = JSON.parse(r.data.data.graphicsJson)
             this.basicSettings = temp.basicSettings
             this.items = temp.items
+            for (const iterator of this.items) {
+              if (!Util.isEmpty(iterator.deviceId)) {
+                this.getSensorLisByDeviceId(iterator.deviceId)
+              }
+            }
           }
           console.log(this.basicSettings)
         })
@@ -678,7 +714,6 @@ export default {
     * @param {Num} index 位置
     */
     deactivatedItem: function (index) {
-      console.log('deactivatedItem')
       this.items[index].active = false
       this.currentItem = this.defalutItem
     },
@@ -710,7 +745,7 @@ export default {
       this.backDragY = top
     },
     /**
-    * @desc 点击编辑区，开始画线
+    * @desc 点击编辑区，开始框选
     * @param {Object} e 点击数据
     */
     configClick: function (e) {
@@ -731,24 +766,28 @@ export default {
       }
       const that = this
       if (Util.isEmpty(this.currentItem.type) && !this.backDragFlag) {
-        this.startX = e.x - this.backDragX
-        this.startY = e.y - this.headerH - this.backDragY
-        this.selDivX = e.x - this.backDragX
-        this.selDivY = e.y - this.headerH - this.backDragY
+        this.startX = e.offsetX
+        this.startY = e.offsetY
+        this.selDivX = this.startX
+        this.selDivY = this.startY
         this.showSelDiv = true
+        this.selTimer = setInterval(function () {
+          that.selTimerFlag = true
+        }, 50)
         // 鼠标移动改变线宽高
         document.onmousemove = function (evt) {
           // console.log(evt)
-          let eY = evt.y - that.headerH
-          let tempX = Math.abs(evt.x - that.backDragX)
-          let tempY = Math.abs(eY - that.backDragY)
-          // let tempY = evt.layerY
-          let x = Math.min(that.startX, tempX)
-          let y = Math.min(that.startY, tempY)
-          that.selDivWidth = Math.abs(tempX - that.startX)
-          that.selDivHeight = Math.abs(tempY - that.startY)
-          that.selDivX = x
-          that.selDivY = y
+          if (that.selTimerFlag) {
+            let tempX = Math.abs(evt.offsetX)
+            let tempY = Math.abs(evt.offsetY)
+            let x = Math.min(that.startX, evt.offsetX)
+            let y = Math.min(that.startY, tempY)
+            that.selDivWidth = Math.abs(tempX - that.startX)
+            that.selDivHeight = Math.abs(tempY - that.startY)
+            that.selDivX = x
+            that.selDivY = y
+            that.selTimerFlag = false
+          }
         }
         // 鼠标放开清除事件
         document.onmouseup = function () {
@@ -758,6 +797,8 @@ export default {
           } else {
             that.showSelDiv = false
           }
+          that.selTimerFlag = false
+          window.clearInterval(that.selTimer)
           document.onmousemove = null
           document.onmouseup = null
         }
@@ -995,7 +1036,7 @@ export default {
     * @desc 获取客户下面的设备
     * @param {Number} clientId 客户id
     */
-    getCdevice (clientId) {
+    getCdevice: function (clientId) {
       this.$api.get('/v2/device/xia?clientId=' + clientId, {}, r => {
         this.deviceList = r.data
       })
@@ -1003,12 +1044,27 @@ export default {
     /**
     * @desc 获取设备下面的传感器
     */
-    getSensorLis () {
+    getSensorLis: async function () {
+      this.sensorList = []
       if (!Util.isEmpty(this.currentItem.deviceId)) {
-        this.$api.get('/v2/sensor/list?deviceId=' + this.currentItem.deviceId, {}, r => {
-          this.sensorList = r.data
-        })
+        if (this.deviceSensors[this.currentItem.deviceId] === undefined) {
+          this.sensorList = await this.getSensorLisByDeviceId(this.currentItem.deviceId)
+        } else {
+          this.sensorList = this.deviceSensors[this.currentItem.deviceId]
+        }
       }
+    },
+    /**
+    * @desc 根据设备id取传感器
+    * @param {String} id 设备id
+    */
+    getSensorLisByDeviceId: async function (id) {
+      return new Promise((resolve) => {
+        this.$api.get('/v2/sensor/list?deviceId=' + id, {}, r => {
+          this.deviceSensors[id] = r.data
+          resolve(r.data)
+        })
+      })
     },
     /**
     * @desc 获取上传图片
@@ -1017,6 +1073,14 @@ export default {
       this.$api.get('/v2/picture/list?clientId=' + this.clientId, {}, r => {
         this.uploadImgs = r.data
       })
+    },
+    /**
+    * @desc 选择开关组
+    */
+    selectSwitch: function () {
+      let temp = this.switchs.find(ele => ele.name === this.currentItem.selectSwitch)
+      this.currentItem.onImg = temp.onImg
+      this.currentItem.offImg = temp.offImg
     },
     /**
     * @desc 保存

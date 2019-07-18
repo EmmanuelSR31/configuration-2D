@@ -1,9 +1,9 @@
 <template>
 <div>
   <div class="progress-con" :style="{height: obj.height + 'px'}">
-    <div class="progress-outer" :style="{height: obj.height + 'px', borderRadius: height + 'px', backgroundColor: obj.backColor, borderRadius: obj.height + 'px'}"></div>
+    <div class="progress-outer" :style="{height: obj.height + 'px', borderRadius: obj.height + 'px', backgroundColor: obj.backColor, borderRadius: obj.height + 'px'}"></div>
     <div class="progress-inner" :style="itemStyle()">
-      {{obj.num}}%
+      {{(obj.val / obj.max * 100).toFixed(0)}}%
     </div>
   </div>
 </div>
@@ -12,10 +12,7 @@
 <script>
 export default {
   props: {
-    obj: Object,
-    num: Number,
-    color: String,
-    fontSize: String
+    obj: Object
   },
   data () {
     return {}
@@ -30,7 +27,7 @@ export default {
       let temp = {
         color: this.obj.fontColor,
         backgroundColor: this.obj.color,
-        width: this.obj.num + '%',
+        width: (this.obj.val / this.obj.max * 100).toFixed(0) + '%',
         borderRadius: this.obj.height + 'px',
         lineHeight: this.obj.height + 'px',
         fontSize: this.obj.fontSize + 'px'
@@ -45,24 +42,5 @@ export default {
 </script>
 
 <style lang="scss">
-.progress-con{
-  position: relative;
-}
-.progress-outer{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
-.progress-inner{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  height: 100%;
-}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div :id="'liquidfill' + index" :ref="'liquidfill' + index" :style="{width: width + 'px', height: height + 'px'}"></div>
+  <div :id="'liquidfill' + index" :ref="'liquidfill' + index" :style="{width: obj.width + 'px', height: obj.height + 'px'}"></div>
 </div>
 </template>
 
@@ -11,12 +11,9 @@ require('echarts/lib/component/tooltip')
 require('es6-promise').polyfill()
 export default {
   props: {
-    color: String,
-    backColor: String,
-    fontSize: String,
+    obj: Object,
     index: Number,
-    width: Number,
-    height: Number
+    val: Number
   },
   data () {
     return {
@@ -38,20 +35,21 @@ export default {
         },
         series: [{
           type: 'liquidFill',
-          data: [0.6],
+          data: [(this.val / this.obj.max).toFixed(2)],
           shape: 'rect',
           radius: '100%',
-          color: [this.color],
+          color: [this.obj.color],
           backgroundStyle: {
-            color: this.backColor
+            color: this.obj.backColor
           },
           outline: {
             itemStyle: {
-              borderColor: this.color
+              borderColor: this.obj.color
             }
           },
           label: {
-            fontSize: this.fontSize
+            formatter: this.val + this.obj.unit + '\n' + (this.val / this.obj.max).toFixed(2) * 100 + '%',
+            fontSize: this.obj.fontSize
           }
         }]
       }
@@ -62,34 +60,17 @@ export default {
     this.init()
   },
   watch: {
-    width: function (newVal, oldVal) {
+    val: function (newVal, oldVal) {
       const that = this
       this.$nextTick(function () {
-        that.init()
-      })
-    },
-    height: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    color: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    backColor: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
-      })
-    },
-    fontSize: function (newVal, oldVal) {
-      const that = this
-      this.$nextTick(function () {
-        that.init()
+        that.charts.setOption({
+          series: [{
+            data: [(that.val / that.obj.max).toFixed(2)],
+            label: {
+              formatter: this.val + this.obj.unit + '\n' + (that.val / that.obj.max).toFixed(2) * 100 + '%'
+            }
+          }]
+        })
       })
     }
   }

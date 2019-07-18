@@ -1,7 +1,7 @@
 <template>
 <div class="svg-switch-con" :id="'switch' + index" @dblclick="change" :style="{height: obj.height + 'px'}">
-  <img v-show="switchVal" src="/img/chart/on1.svg">
-  <img v-show="!switchVal" src="/img/chart/off1.svg">
+  <img v-show="switchVal" :src="obj.onImg">
+  <img v-show="!switchVal" :src="obj.offImg">
 </div>
 </template>
 
@@ -30,7 +30,5 @@ export default {
 </script>
 
 <style lang="scss">
-.svg-switch-con{
-  cursor: pointer;
-}
+
 </style>

@@ -616,7 +616,7 @@ const state = {
   ],
   headerHeight: 100, // 头部高度
   uploadIp: 'http://king-break.imwork.net:9007/device', // 上传ip地址
-  commonItems: [
+  commonItems: [ // 基本
     {
       name: '文本',
       type: 'text',
@@ -706,12 +706,15 @@ const state = {
       height: 60
     }
   ],
-  chartItems: [
+  chartItems: [ // 组件
     {
       name: '开关',
       type: 'chart',
       class: 'switch',
       img: '/img/chart/switch1.png',
+      selectSwitch: '开关(第一组)',
+      onImg: '/img/chart/on1.svg',
+      offImg: '/img/chart/off1.svg',
       width: 84,
       height: 34
     },
@@ -800,11 +803,17 @@ const state = {
       class: 'echart-gauge',
       img: '/img/chart/meter1.png',
       whiteFlag: false,
+      max: 100,
+      unit: '',
+      axisLineWidth: 30,
+      showAxisLabel: true,
+      axisLabelDistance: 5,
+      detailFontSize: 15,
       width: 400,
       height: 400
     }
   ],
-  svgContainerItems: [
+  svgContainerItems: [ // 图库容器
     {
       name: '智能电磁流量计',
       type: 'device',
@@ -886,7 +895,7 @@ const state = {
       height: 168
     }
   ],
-  svgValveItems: [
+  svgValveItems: [ // 图库阀门
     {
       name: '控制阀',
       type: 'device',
@@ -1072,7 +1081,7 @@ const state = {
       height: 109
     }
   ],
-  imgItems: [
+  imgItems: [ // 图形
     {
       type: 'img',
       img: '/img/graphical/tx(1).svg',
@@ -1154,7 +1163,7 @@ const state = {
       height: 297
     }
   ],
-  canvasItems: [
+  canvasItems: [ // 动画
     {
       name: '管道',
       type: 'pip-h',
@@ -1180,11 +1189,11 @@ const state = {
       name: '进度条',
       type: 'progress',
       img: '/img/canvas/progress.jpg',
-      num: 60,
       fontColor: 'rgba(255,255,255,1)',
       color: 'rgba(45, 140, 240, 1)',
       backColor: 'rgba(243, 243, 243, 1)',
       fontSize: '12',
+      max: 100,
       width: 300,
       height: 30
     },
@@ -1195,8 +1204,62 @@ const state = {
       backColor: 'rgba(255,255,255,1)',
       color: 'rgba(45, 140, 240, 1)',
       fontSize: '20',
+      max: 100,
+      unit: '',
       width: 200,
       height: 200
+    }
+  ],
+  switchs: [ // 开关组
+    {
+      name: '开关(第一组)',
+      onImg: '/img/chart/on1.svg',
+      offImg: '/img/chart/off1.svg'
+    },
+    {
+      name: '开关(第二组)',
+      onImg: '/img/chart/on2.svg',
+      offImg: '/img/chart/off2.svg'
+    },
+    {
+      name: '开关(第三组)',
+      onImg: '/img/chart/on3.svg',
+      offImg: '/img/chart/off3.svg'
+    },
+    {
+      name: '开关(第四组)',
+      onImg: '/img/chart/on4.png',
+      offImg: '/img/chart/off4.png'
+    },
+    {
+      name: '开关(第五组)',
+      onImg: '/img/chart/on5.png',
+      offImg: '/img/chart/off5.png'
+    },
+    {
+      name: '开关(第六组)',
+      onImg: '/img/chart/on6.png',
+      offImg: '/img/chart/off6.png'
+    },
+    {
+      name: '开关(第七组)',
+      onImg: '/img/chart/on7.png',
+      offImg: '/img/chart/off7.png'
+    },
+    {
+      name: '开关(第八组)',
+      onImg: '/img/chart/on8.png',
+      offImg: '/img/chart/off8.png'
+    },
+    {
+      name: '开关(第九组)',
+      onImg: '/img/chart/on9.png',
+      offImg: '/img/chart/off9.png'
+    },
+    {
+      name: '开关(第十组)',
+      onImg: '/img/chart/on10.png',
+      offImg: '/img/chart/off10.png'
     }
   ]
 }

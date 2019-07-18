@@ -26,7 +26,7 @@
             <echart-pie :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :annular="item.annular" :index="index"></echart-pie>
           </template>
           <template v-else-if="item.class === 'echart-gauge'">
-            <echart-gauge :obj="item" :width="item.width" :height="item.height" :whiteFlag="item.whiteFlag" :index="index"></echart-gauge>
+            <echart-gauge :obj="item" :val="item.val" :index="index"></echart-gauge>
           </template>
         </template>
         <template v-else-if="item.type === 'text'">
@@ -61,16 +61,16 @@
           </div>
         </template>
         <template v-else-if="item.type === 'pip-h'">
-          <pipeline :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline>
+          <pipeline :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :val="item.val" :index="index"></pipeline>
         </template>
         <template v-else-if="item.type === 'pip-corner'">
-          <pipeline-corner :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :index="index"></pipeline-corner>
+          <pipeline-corner :width="item.width" :height="item.height" :color="item.color" :pipelineColor="item.pipelineColor" :pipelineHeight="item.pipelineHeight" :val="item.val" :index="index"></pipeline-corner>
         </template>
         <template v-else-if="item.type === 'progress'">
           <progress-bar :obj="item" :index="index"></progress-bar>
         </template>
         <template v-else-if="item.type === 'liquidfill'">
-          <liquidfill :color="item.color" :backColor="item.backColor" :fontSize="item.fontSize" :width="item.width" :height="item.height" :index="index"></liquidfill>
+          <liquidfill :obj="item" :val="item.val" :index="index"></liquidfill>
         </template>
         <template v-else-if="item.type === 'upload'">
           <img :src="uploadIp + '/v2/upDown/preview?id=' + item.uploadId" :id="item.id">
@@ -206,7 +206,7 @@ export default {
       this.$api.put('/v2/apps/graphics/putSensorData', { sensorJson: this.sensorIds.join(',') }, r => {
         // console.log(r)
         if (r.data.status) {
-          for (const iterator of this.sensorItems) {
+          /* for (const iterator of this.sensorItems) {
             let arr = []
             let ids = []
             if (iterator.sensorId instanceof Array) {
@@ -228,6 +228,27 @@ export default {
             }
             this.$set(iterator, 'val', arr.join(','))
             // console.log(iterator.val)
+          } */
+          for (const iterator of r.data.data) {
+            for (const item of this.sensorItems) {
+              let arr = []
+              let ids = []
+              if (item.sensorId instanceof Array) {
+                ids = item.sensorId
+              } else {
+                ids.push(item.sensorId)
+              }
+              for (const itm of ids) {
+                for (const key in iterator) {
+                  if (iterator.hasOwnProperty(key)) {
+                    if (key === itm) {
+                      arr.push(iterator[key])
+                    }
+                  }
+                }
+              }
+              this.$set(item, 'val', arr.join(','))
+            }
           }
         }
       })
