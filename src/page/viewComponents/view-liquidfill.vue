@@ -36,7 +36,7 @@ export default {
         series: [{
           type: 'liquidFill',
           data: [(this.val / this.obj.max).toFixed(2)],
-          shape: 'rect',
+          shape: 'container',
           radius: '100%',
           color: [this.obj.color],
           backgroundStyle: {
@@ -48,7 +48,7 @@ export default {
             }
           },
           label: {
-            formatter: this.val + this.obj.unit + '\n' + (this.val / this.obj.max).toFixed(2) * 100 + '%',
+            formatter: this.val + this.obj.unit,
             fontSize: this.obj.fontSize
           }
         }]

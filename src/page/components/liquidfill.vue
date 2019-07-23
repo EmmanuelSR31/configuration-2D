@@ -40,7 +40,7 @@ export default {
         series: [{
           type: 'liquidFill',
           data: [0.6],
-          shape: 'rect',
+          shape: 'container',
           radius: '100%',
           color: [this.color],
           backgroundStyle: {
@@ -52,7 +52,7 @@ export default {
             }
           },
           label: {
-            formatter: '60' + this.unit + '\n60%',
+            formatter: '60' + this.unit,
             fontSize: this.fontSize
           }
         }]

@@ -715,8 +715,20 @@ const state = {
       selectSwitch: '开关(第一组)',
       onImg: '/img/chart/on1.svg',
       offImg: '/img/chart/off1.svg',
+      backColor: 'rgba(255,255,255,0)',
       width: 84,
       height: 34
+    },
+    {
+      name: '阀门',
+      type: 'chart',
+      class: 'valve',
+      img: '/img/chart/valve1.svg',
+      color: '#000',
+      backColor: 'rgba(255,255,255,0)',
+      errorStatusColor: 'rgba(235,98,51,1)',
+      width: 40,
+      height: 40
     },
     {
       name: '数值',
@@ -1081,6 +1093,24 @@ const state = {
       height: 109
     }
   ],
+  svgWaterItems: [ // 图库水处理
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL(69).svg',
+      width: 138,
+      height: 540
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL(104).svg',
+      width: 339,
+      height: 314
+    }
+  ],
   imgItems: [ // 图形
     {
       type: 'img',
@@ -1161,6 +1191,22 @@ const state = {
       backColor: 'rgba(255, 255, 255, 0)',
       width: 240,
       height: 297
+    },
+    {
+      type: 'img',
+      img: '/img/graphical/arrow1.svg',
+      color: 'rgba(0, 0, 0, 1)',
+      backColor: 'rgba(255, 255, 255, 0)',
+      width: 60,
+      height: 60
+    },
+    {
+      type: 'img',
+      img: '/img/graphical/arrow2.svg',
+      color: 'rgba(0, 0, 0, 1)',
+      backColor: 'rgba(255, 255, 255, 0)',
+      width: 40,
+      height: 30
     }
   ],
   canvasItems: [ // 动画

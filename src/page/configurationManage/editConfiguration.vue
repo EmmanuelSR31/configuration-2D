@@ -47,6 +47,7 @@
           <ul>
             <li :class="{'active': svgItemsTypeTitle === '容器'}" @click="setSvgItems('svgContainerItems', '容器')">容器</li>
             <li :class="{'active': svgItemsTypeTitle === '阀门'}" @click="setSvgItems('svgValveItems', '阀门')">阀门</li>
+            <li :class="{'active': svgItemsTypeTitle === '水处理'}" @click="setSvgItems('svgWaterItems', '水处理')">水处理</li>
           </ul>
         </div>
         <ul v-show="!deviceItemTypeShow && curItemListType === 'device'" class="config-item-list">
@@ -92,6 +93,9 @@
                   <template v-else-if="item.type === 'chart'">
                     <template v-if="item.class === 'switch'">
                       <switch1 :obj="item" :index="index"></switch1>
+                    </template>
+                    <template v-if="item.class === 'valve'">
+                      <valve :obj="item" :color="item.color" :index="index"></valve>
                     </template>
                     <template v-else-if="item.class === 'value'">
                       <sensor-value :obj="item" :index="index"></sensor-value>
@@ -168,6 +172,9 @@
               <template v-else-if="item.type === 'chart'">
                 <template v-if="item.class === 'switch'">
                   <switch1 :obj="item" :index="index"></switch1>
+                </template>
+                <template v-if="item.class === 'valve'">
+                  <valve :obj="item" :color="item.color" :index="index"></valve>
                 </template>
                 <template v-else-if="item.class === 'value'">
                   <sensor-value :obj="item" :index="index"></sensor-value>
@@ -312,8 +319,11 @@
               <FormItem v-show="['progress'].includes(currentItem.type)">
                 <ColorPicker v-model="currentItem.fontColor" alpha recommend />
               </FormItem>
-              <FormItem v-show="['img', 'progress', 'liquidfill', 'pip-h', 'pip-corner'].includes(currentItem.type)" label="填充颜色">
+              <FormItem v-show="['img', 'progress', 'liquidfill', 'pip-h', 'pip-corner'].includes(currentItem.type) || ['valve'].includes(currentItem.class)" label="填充颜色">
                 <ColorPicker v-model="currentItem.color" alpha recommend />
+              </FormItem>
+              <FormItem v-show="['valve'].includes(currentItem.class)" label="关闭颜色">
+                <ColorPicker v-model="currentItem.errorStatusColor" alpha recommend />
               </FormItem>
               <FormItem v-show="['pip-h', 'pip-corner'].includes(currentItem.type)" label="管道颜色">
                 <ColorPicker v-model="currentItem.pipelineColor" alpha recommend />
@@ -530,6 +540,7 @@ import pipelineCorner from '../components/canvas-pipeline-corner.vue'
 import progressBar from '../components/progress-bar.vue'
 import liquidfill from '../components/liquidfill.vue'
 import switch1 from '../components/switch1.vue'
+import valve from '../components/valve.vue'
 import sensorValue from '../components/sensor-value.vue'
 import led from '../components/led.vue'
 import echartLine from '../components/echart-line.vue'
@@ -551,6 +562,7 @@ export default {
     progressBar,
     liquidfill,
     switch1,
+    valve,
     sensorValue,
     led,
     echartLine,

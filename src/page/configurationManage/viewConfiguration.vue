@@ -1,7 +1,7 @@
 <template>
-<div ref="con" style="height: 100%;position: relative;">
-  <div :style="{width: basicSettings.width + 'px', height: basicSettings.height + 'px'}">
-    <div class="view-config-con" :style="{backgroundColor: basicSettings.backColor, transform: 'scale(' + widthScale + ',' + heightScale + ')'}">
+<div ref="con" style="height: 100%;position: relative;" :style="{backgroundColor: basicSettings.backColor}">
+  <div>
+    <div class="view-config-con" :style="{width: basicSettings.width + 'px', height: basicSettings.height + 'px', backgroundColor: basicSettings.backColor, transform: 'scale(' + widthScale + ',' + heightScale + ')'}">
       <div v-for="(item, index) in items" class="svg-div config-view-item" :style="itemStyle(item)" :data-id="item.id" :key="index">
         <template v-if="item.type === 'device'">
           <img :src="item.img" :id="item.id">
@@ -9,6 +9,9 @@
         <template v-else-if="item.type === 'chart'">
           <template v-if="item.class === 'switch'">
             <switch1 :obj="item" :index="index"></switch1>
+          </template>
+          <template v-if="item.class === 'valve'">
+            <valve :obj="item" :index="index"></valve>
           </template>
           <template v-else-if="item.class === 'value'">
             <sensor-value :obj="item" :val="item.val" :index="index"></sensor-value>
@@ -88,6 +91,7 @@ import pipelineCorner from '../viewComponents/view-canvas-pipeline-corner.vue'
 import progressBar from '../viewComponents/view-progress-bar.vue'
 import liquidfill from '../viewComponents/view-liquidfill.vue'
 import switch1 from '../viewComponents/view-switch1.vue'
+import valve from '../viewComponents/view-valve.vue'
 import sensorValue from '../viewComponents/view-sensor-value.vue'
 import led from '../viewComponents/view-led.vue'
 import echartLine from '../viewComponents/view-echart-line.vue'
@@ -106,6 +110,7 @@ export default {
     progressBar,
     liquidfill,
     switch1,
+    valve,
     sensorValue,
     led,
     echartLine,
@@ -173,6 +178,7 @@ export default {
     getSensorIds: function () {
       for (const iterator of this.items) {
         if (!Util.isEmpty(iterator.sensorId)) {
+          // iterator.val = '0'
           this.sensorIds.push(iterator.sensorId)
           this.sensorItems.push(iterator)
         }
@@ -181,7 +187,7 @@ export default {
       const that = this
       if (this.sensorIds.length > 0) {
         this.getSensorData()
-        this.timer = window.setInterval(that.getSensorData, 3000)
+        this.timer = window.setInterval(that.getSensorData, 30000)
       }
     },
     /**
@@ -206,7 +212,7 @@ export default {
       this.$api.put('/v2/apps/graphics/putSensorData', { sensorJson: this.sensorIds.join(',') }, r => {
         // console.log(r)
         if (r.data.status) {
-          /* for (const iterator of this.sensorItems) {
+          for (const iterator of this.sensorItems) {
             let arr = []
             let ids = []
             if (iterator.sensorId instanceof Array) {
@@ -228,27 +234,6 @@ export default {
             }
             this.$set(iterator, 'val', arr.join(','))
             // console.log(iterator.val)
-          } */
-          for (const iterator of r.data.data) {
-            for (const item of this.sensorItems) {
-              let arr = []
-              let ids = []
-              if (item.sensorId instanceof Array) {
-                ids = item.sensorId
-              } else {
-                ids.push(item.sensorId)
-              }
-              for (const itm of ids) {
-                for (const key in iterator) {
-                  if (iterator.hasOwnProperty(key)) {
-                    if (key === itm) {
-                      arr.push(iterator[key])
-                    }
-                  }
-                }
-              }
-              this.$set(item, 'val', arr.join(','))
-            }
           }
         }
       })
