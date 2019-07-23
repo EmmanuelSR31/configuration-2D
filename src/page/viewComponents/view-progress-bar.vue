@@ -3,7 +3,7 @@
   <div class="progress-con" :style="{height: obj.height + 'px'}">
     <div class="progress-outer" :style="{height: obj.height + 'px', borderRadius: obj.height + 'px', backgroundColor: obj.backColor, borderRadius: obj.height + 'px'}"></div>
     <div class="progress-inner" :style="itemStyle()">
-      {{(obj.val / obj.max * 100).toFixed(0)}}%
+      {{val}}%
     </div>
   </div>
 </div>
@@ -36,7 +36,13 @@ export default {
     }
   },
   mounted () {
+    this.obj.val = '0'
     this.init()
+  },
+  computed: {
+    val: function () {
+      return (this.$math.divide(this.obj.val, this.obj.max) * 100).toFixed(2)
+    }
   }
 }
 </script>

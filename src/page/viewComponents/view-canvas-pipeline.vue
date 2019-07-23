@@ -43,7 +43,7 @@ export default {
       this.timer = window.setInterval(function () {
         that.updateWater()
         that.drawWater()
-      }, 40)
+      }, 100)
     },
     // 根据宽度初始化每个块
     initWater: function () {
@@ -78,12 +78,12 @@ export default {
       this.ctx.fillStyle = this.pipelineColor
       this.ctx.clearRect(0, 0, this.width, this.height)
       this.ctx.fillRect(0, 0, this.width, this.pipelineHeight)
+      this.ctx.strokeStyle = this.color
+      this.ctx.lineWidth = this.pipelineHeight - 2
       for (const iterator of this.waters) {
         this.ctx.beginPath()
         this.ctx.moveTo(iterator.fromX, this.pipelineHeight / 2)
         this.ctx.lineTo(iterator.toX, this.pipelineHeight / 2)
-        this.ctx.strokeStyle = this.color
-        this.ctx.lineWidth = this.pipelineHeight - 2
         // this.ctx.lineCap = 'round'
         this.ctx.stroke()
         this.ctx.closePath()

@@ -1217,7 +1217,7 @@ const state = {
       color: 'rgba(0, 153, 255, 1)',
       pipelineColor: 'rgba(206, 218, 239, 1)',
       pipelineHeight: 10,
-      width: 700,
+      width: 400,
       height: 10
     },
     {

@@ -13,7 +13,7 @@ export default {
   props: {
     obj: Object,
     index: Number,
-    val: Number
+    val: String
   },
   data () {
     return {
@@ -35,7 +35,7 @@ export default {
         },
         series: [{
           type: 'liquidFill',
-          data: [(this.val / this.obj.max).toFixed(2)],
+          data: [this.$math.divide(this.val, this.obj.max).toFixed(2)],
           shape: 'container',
           radius: '100%',
           color: [this.obj.color],
@@ -57,6 +57,7 @@ export default {
     }
   },
   mounted () {
+    this.val = '0'
     this.init()
   },
   watch: {
@@ -65,9 +66,9 @@ export default {
       this.$nextTick(function () {
         that.charts.setOption({
           series: [{
-            data: [(that.val / that.obj.max).toFixed(2)],
+            data: [this.$math.divide(this.val, this.obj.max).toFixed(2)],
             label: {
-              formatter: this.val + this.obj.unit + '\n' + (that.val / that.obj.max).toFixed(2) * 100 + '%'
+              formatter: this.val + this.obj.unit
             }
           }]
         })
