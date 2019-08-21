@@ -1,6 +1,6 @@
 <template>
 <div>
-  <canvas :id="'canvasCon' + index" :width="this.width" :height="this.height"></canvas>
+  <canvas :id="'canvasCon' + index" :width="width" :height="height"></canvas>
 </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
       this.timer = window.setInterval(function () {
         that.updateWater()
         that.drawWater()
-      }, 40)
+      }, 100)
     },
     // 根据宽度初始化每个块
     initWater: function () {

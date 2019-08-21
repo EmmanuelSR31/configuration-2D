@@ -1,6 +1,6 @@
 <template>
 <div>
-  <canvas :id="'canvasCon' + index" :width="this.width" :height="this.height"></canvas>
+  <canvas :id="'canvasCon' + index" :width="width" :height="height"></canvas>
 </div>
 </template>
 

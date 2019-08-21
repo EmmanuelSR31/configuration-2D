@@ -830,7 +830,7 @@ const state = {
       name: '智能电磁流量计',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(1).svg',
+      img: '/img/svg/RQ/RQ(1).svg',
       width: 366,
       height: 557
     },
@@ -838,7 +838,7 @@ const state = {
       name: '气旋流量计',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(2).svg',
+      img: '/img/svg/RQ/RQ(2).svg',
       width: 554,
       height: 569
     },
@@ -846,7 +846,7 @@ const state = {
       name: '电磁流量计1',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(3).svg',
+      img: '/img/svg/RQ/RQ(3).svg',
       width: 563,
       height: 556
     },
@@ -854,7 +854,7 @@ const state = {
       name: '简单流量计',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(4).svg',
+      img: '/img/svg/RQ/RQ(4).svg',
       width: 481,
       height: 553
     },
@@ -862,7 +862,7 @@ const state = {
       name: '模拟输出流量传感器',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(5).svg',
+      img: '/img/svg/RQ/RQ(5).svg',
       width: 554,
       height: 554
     },
@@ -870,7 +870,7 @@ const state = {
       name: '流量积算器',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(6).svg',
+      img: '/img/svg/RQ/RQ(6).svg',
       width: 554,
       height: 510
     },
@@ -878,7 +878,7 @@ const state = {
       name: '锥式流量计',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(7).svg',
+      img: '/img/svg/RQ/RQ(7).svg',
       width: 554,
       height: 277
     },
@@ -886,7 +886,7 @@ const state = {
       name: '电磁流量计2',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(8).svg',
+      img: '/img/svg/RQ/RQ(8).svg',
       width: 364,
       height: 553
     },
@@ -894,7 +894,7 @@ const state = {
       name: '电磁流量计',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(9).svg',
+      img: '/img/svg/RQ/RQ(9).svg',
       width: 238,
       height: 560
     },
@@ -902,9 +902,417 @@ const state = {
       name: '流管3',
       type: 'device',
       class: 'container',
-      img: '/img/svg/RQ(10).svg',
+      img: '/img/svg/RQ/RQ(10).svg',
       width: 554,
       height: 168
+    },
+    {
+      name: '热式质量流量计',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(11).svg',
+      width: 563,
+      height: 556
+    },
+    {
+      name: '智能科氏流量计 2',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(12).svg',
+      width: 567,
+      height: 284
+    },
+    {
+      name: '涡轮流量计',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(13).svg',
+      width: 563,
+      height: 311
+    },
+    {
+      name: '简单流量控制器',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(14).svg',
+      width: 561,
+      height: 458
+    },
+    {
+      name: '排气压力',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(15).svg',
+      width: 560,
+      height: 560
+    },
+    {
+      name: '啤酒罐',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(16).svg',
+      width: 284,
+      height: 557
+    },
+    {
+      name: '智能科氏流量计 1',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(17).svg',
+      width: 369,
+      height: 550
+    },
+    {
+      name: '用OSHA胶带封口的纸箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(18).svg',
+      width: 552,
+      height: 437
+    },
+    {
+      name: '压力',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(19).svg',
+      width: 184,
+      height: 557
+    },
+    {
+      name: '塑料容器 2',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(20).svg',
+      width: 234,
+      height: 558
+    },
+    {
+      name: '罐头',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(21).svg',
+      width: 287,
+      height: 561
+    },
+    {
+      name: '浴缸',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(22).svg',
+      width: 554,
+      height: 242
+    },
+    {
+      name: '带盖船运集装箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(23).svg',
+      width: 362,
+      height: 561
+    },
+    {
+      name: '流量计',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(24).svg',
+      width: 481,
+      height: 553
+    },
+    {
+      name: '塑料容器 3',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(25).svg',
+      width: 224,
+      height: 566
+    },
+    {
+      name: '升瓶子',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(26).svg',
+      width: 177,
+      height: 560
+    },
+    {
+      name: '散装货集装箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(27).svg',
+      width: 564,
+      height: 378
+    },
+    {
+      name: '升瓶子1',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(28).svg',
+      width: 177,
+      height: 561
+    },
+    {
+      name: '杯子',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(29).svg',
+      width: 185,
+      height: 561
+    },
+    {
+      name: '流元件',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(30).svg',
+      width: 554,
+      height: 182
+    },
+    {
+      name: '温度',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(31).svg',
+      width: 155,
+      height: 559
+    },
+    {
+      name: '塑料容器',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(32).svg',
+      width: 199,
+      height: 566
+    },
+    {
+      name: '桶',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(33).svg',
+      width: 564,
+      height: 548
+    },
+    {
+      name: '容器 1',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(34).svg',
+      width: 406,
+      height: 560
+    },
+    {
+      name: '罐头 2',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(35).svg',
+      width: 209,
+      height: 565
+    },
+    {
+      name: '罐头 3',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(36).svg',
+      width: 209,
+      height: 565
+    },
+    {
+      name: '瓶子',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(37).svg',
+      width: 235,
+      height: 558
+    },
+    {
+      name: '黄桶',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(38).svg',
+      width: 332,
+      height: 560
+    },
+    {
+      name: '灰色桶',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(39).svg',
+      width: 336,
+      height: 560
+    },
+    {
+      name: '绿色桶',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(40).svg',
+      width: 336,
+      height: 560
+    },
+    {
+      name: '蓝桶',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(41).svg',
+      width: 333,
+      height: 563
+    },
+    {
+      name: '药瓶',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(42).svg',
+      width: 341,
+      height: 553
+    },
+    {
+      name: '玻璃纤维方形网格光栅(俯视图)',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(43).svg',
+      width: 561,
+      height: 561
+    },
+    {
+      name: '板条箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(44).svg',
+      width: 561,
+      height: 554
+    },
+    {
+      name: '玻璃纤维方形网格光栅(透视图)',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(45).svg',
+      width: 560,
+      height: 55
+    },
+    {
+      name: '贴有条形码的密封纸箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(46).svg',
+      width: 552,
+      height: 441
+    },
+    {
+      name: '微电脑控制器',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(47).svg',
+      width: 560,
+      height: 408
+    },
+    {
+      name: '投药瓶',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(48).svg',
+      width: 202,
+      height: 547
+    },
+    {
+      name: '塑料托盘',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(49).svg',
+      width: 564,
+      height: 72
+    },
+    {
+      name: '打开的纸箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(50).svg',
+      width: 554,
+      height: 365
+    },
+    {
+      name: '封口贴标纸箱俯视图',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(51).svg',
+      width: 554,
+      height: 413
+    },
+    {
+      name: '开口纸箱俯视图',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(52).svg',
+      width: 555,
+      height: 395
+    },
+    {
+      name: '有向上箭头的密封贴标纸箱1',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(53).svg',
+      width: 555,
+      height: 482
+    },
+    {
+      name: '有向上箭头的封口纸箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(54).svg',
+      width: 555,
+      height: 482
+    },
+    {
+      name: '实木托盘',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(55).svg',
+      width: 568,
+      height: 97
+    },
+    {
+      name: '无盖纸箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(56).svg',
+      width: 555,
+      height: 474
+    },
+    {
+      name: '纸箱 2',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(57).svg',
+      width: 555,
+      height: 241
+    },
+    {
+      name: '纸箱 1',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(58).svg',
+      width: 555,
+      height: 482
+    },
+    {
+      name: '封口纸箱俯视图',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(59).svg',
+      width: 555,
+      height: 482
+    },
+    {
+      name: '封口纸箱',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(60).svg',
+      width: 555,
+      height: 482
+    },
+    {
+      name: '简易封口纸箱，俯视图',
+      type: 'device',
+      class: 'container',
+      img: '/img/svg/RQ/RQ(61).svg',
+      width: 552,
+      height: 429
     }
   ],
   svgValveItems: [ // 图库阀门
@@ -912,7 +1320,7 @@ const state = {
       name: '控制阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(1).svg',
+      img: '/img/svg/FM/FM(1).svg',
       width: 95,
       height: 140
     },
@@ -920,7 +1328,7 @@ const state = {
       name: '旋转阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(2).svg',
+      img: '/img/svg/FM/FM(2).svg',
       width: 142,
       height: 110
     },
@@ -928,7 +1336,7 @@ const state = {
       name: '水平单向阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(3).svg',
+      img: '/img/svg/FM/FM(3).svg',
       width: 140,
       height: 107
     },
@@ -936,7 +1344,7 @@ const state = {
       name: '垂直单向阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(4).svg',
+      img: '/img/svg/FM/FM(4).svg',
       width: 112,
       height: 140
     },
@@ -944,7 +1352,7 @@ const state = {
       name: '电动阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(5).svg',
+      img: '/img/svg/FM/FM(5).svg',
       width: 64,
       height: 141
     },
@@ -952,7 +1360,7 @@ const state = {
       name: '手动阀1',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(6).svg',
+      img: '/img/svg/FM/FM(6).svg',
       width: 142,
       height: 122
     },
@@ -960,7 +1368,7 @@ const state = {
       name: '法兰控制阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(7).svg',
+      img: '/img/svg/FM/FM(7).svg',
       width: 67,
       height: 141
     },
@@ -968,7 +1376,7 @@ const state = {
       name: '球形阀2',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(8).svg',
+      img: '/img/svg/FM/FM(8).svg',
       width: 140,
       height: 81
     },
@@ -976,7 +1384,7 @@ const state = {
       name: '球形阀1',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(9).svg',
+      img: '/img/svg/FM/FM(9).svg',
       width: 141,
       height: 90
     },
@@ -984,7 +1392,7 @@ const state = {
       name: '阀门1',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(10).svg',
+      img: '/img/svg/FM/FM(10).svg',
       width: 85,
       height: 140
     },
@@ -992,7 +1400,7 @@ const state = {
       name: '球形阀3',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(11).svg',
+      img: '/img/svg/FM/FM(11).svg',
       width: 93,
       height: 142
     },
@@ -1000,7 +1408,7 @@ const state = {
       name: '卸灰阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(12).svg',
+      img: '/img/svg/FM/FM(12).svg',
       width: 95,
       height: 141
     },
@@ -1008,7 +1416,7 @@ const state = {
       name: '塑料旋启式止回阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(13).svg',
+      img: '/img/svg/FM/FM(13).svg',
       width: 142,
       height: 118
     },
@@ -1016,7 +1424,7 @@ const state = {
       name: '控制阀2',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(14).svg',
+      img: '/img/svg/FM/FM(14).svg',
       width: 58,
       height: 142
     },
@@ -1024,7 +1432,7 @@ const state = {
       name: '安全阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(15).svg',
+      img: '/img/svg/FM/FM(15).svg',
       width: 126,
       height: 142
     },
@@ -1032,7 +1440,7 @@ const state = {
       name: '水平控制阀1',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(16).svg',
+      img: '/img/svg/FM/FM(16).svg',
       width: 139,
       height: 139
     },
@@ -1040,7 +1448,7 @@ const state = {
       name: '垂直控制阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(17).svg',
+      img: '/img/svg/FM/FM(17).svg',
       width: 131,
       height: 142
     },
@@ -1048,7 +1456,7 @@ const state = {
       name: '水平控制阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(18).svg',
+      img: '/img/svg/FM/FM(18).svg',
       width: 104,
       height: 142
     },
@@ -1056,7 +1464,7 @@ const state = {
       name: '夹管阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(19).svg',
+      img: '/img/svg/FM/FM(19).svg',
       width: 100,
       height: 142
     },
@@ -1064,7 +1472,7 @@ const state = {
       name: '水平控制阀2',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(20).svg',
+      img: '/img/svg/FM/FM(20).svg',
       width: 110,
       height: 139
     },
@@ -1072,7 +1480,7 @@ const state = {
       name: '阀门',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(21).svg',
+      img: '/img/svg/FM/FM(21).svg',
       width: 124,
       height: 140
     },
@@ -1080,7 +1488,7 @@ const state = {
       name: '双通阀',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(22).svg',
+      img: '/img/svg/FM/FM(22).svg',
       width: 142,
       height: 125
     },
@@ -1088,9 +1496,337 @@ const state = {
       name: '手动阀2',
       type: 'device',
       class: 'valve',
-      img: '/img/svg/FM(23).svg',
+      img: '/img/svg/FM/FM(23).svg',
       width: 142,
       height: 109
+    }
+  ],
+  svgHavcItems: [ // 图库HAVC
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(1).svg',
+      width: 562,
+      height: 231
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(2).svg',
+      width: 455,
+      height: 567
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(3).svg',
+      width: 562,
+      height: 429
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(4).svg',
+      width: 563,
+      height: 357
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(5).svg',
+      width: 551,
+      height: 326
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(6).svg',
+      width: 185,
+      height: 564
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(7).svg',
+      width: 566,
+      height: 470
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(8).svg',
+      width: 354,
+      height: 561
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(9).svg',
+      width: 408,
+      height: 563
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'havc',
+      img: '/img/svg/HAVC/HAVC(10).svg',
+      width: 545,
+      height: 208
+    }
+  ],
+  svgHeaterItems: [ // 图库加热器
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(1).svg',
+      width: 512,
+      height: 564
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(2).svg',
+      width: 566,
+      height: 419
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(3).svg',
+      width: 261,
+      height: 561
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(4).svg',
+      width: 311,
+      height: 566
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(5).svg',
+      width: 490,
+      height: 564
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(6).svg',
+      width: 567,
+      height: 246
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(7).svg',
+      width: 567,
+      height: 200
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(8).svg',
+      width: 551,
+      height: 591
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(9).svg',
+      width: 504,
+      height: 564
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'heater',
+      img: '/img/svg/JRQ/JRQ(10).svg',
+      width: 564,
+      height: 452
+    }
+  ],
+  svgLogisticsItems: [ // 图库物流
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(1).svg',
+      width: 565,
+      height: 266
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(2).svg',
+      width: 561,
+      height: 397
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(3).svg',
+      width: 565,
+      height: 565
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(4).svg',
+      width: 238,
+      height: 565
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(5).svg',
+      width: 565,
+      height: 305
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(6).svg',
+      width: 565,
+      height: 155
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(7).svg',
+      width: 368,
+      height: 560
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(8).svg',
+      width: 562,
+      height: 129
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(9).svg',
+      width: 562,
+      height: 57
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'logistics',
+      img: '/img/svg/WL/WL(10).svg',
+      width: 562,
+      height: 261
+    }
+  ],
+  svgIndustryItems: [ // 图库工业
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(1).svg',
+      width: 324,
+      height: 567
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(2).svg',
+      width: 257,
+      height: 566
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(3).svg',
+      width: 564,
+      height: 530
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(4).svg',
+      width: 566,
+      height: 269
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(5).svg',
+      width: 566,
+      height: 98
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(6).svg',
+      width: 464,
+      height: 562
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(7).svg',
+      width: 558,
+      height: 504
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(8).svg',
+      width: 567,
+      height: 123
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(9).svg',
+      width: 564,
+      height: 450
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'industry',
+      img: '/img/svg/GY/GY(10).svg',
+      width: 567,
+      height: 333
     }
   ],
   svgWaterItems: [ // 图库水处理
@@ -1098,17 +1834,841 @@ const state = {
       name: '',
       type: 'device',
       class: 'water',
-      img: '/img/svg/FSCL(69).svg',
-      width: 138,
-      height: 540
+      img: '/img/svg/FSCL/FSCL(1).svg',
+      width: 220,
+      height: 367
     },
     {
       name: '',
       type: 'device',
       class: 'water',
-      img: '/img/svg/FSCL(104).svg',
+      img: '/img/svg/FSCL/FSCL(2).svg',
+      width: 340,
+      height: 351
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(3).svg',
+      width: 340,
+      height: 324
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(4).svg',
+      width: 340,
+      height: 345
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(5).svg',
+      width: 340,
+      height: 265
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(6).svg',
+      width: 340,
+      height: 295
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(7).svg',
+      width: 340,
+      height: 217
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(8).svg',
+      width: 340,
+      height: 219
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(9).svg',
+      width: 220,
+      height: 374
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(10).svg',
+      width: 340,
+      height: 336
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(11).svg',
+      width: 340,
+      height: 305
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(12).svg',
+      width: 299,
+      height: 177
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(13).svg',
+      width: 341,
+      height: 149
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(14).svg',
+      width: 341,
+      height: 337
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(15).svg',
+      width: 300,
+      height: 183
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(16).svg',
+      width: 341,
+      height: 181
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(17).svg',
+      width: 299,
+      height: 220
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(18).svg',
+      width: 341,
+      height: 234
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(19).svg',
+      width: 341,
+      height: 225
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(20).svg',
+      width: 341,
+      height: 359
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(21).svg',
+      width: 299,
+      height: 248
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(22).svg',
+      width: 299,
+      height: 295
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(23).svg',
+      width: 341,
+      height: 420
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(24).svg',
+      width: 340,
+      height: 293
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(25).svg',
+      width: 341,
+      height: 454
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(26).svg',
+      width: 341,
+      height: 251
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(27).svg',
+      width: 341,
+      height: 313
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(28).svg',
+      width: 341,
+      height: 328
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(29).svg',
+      width: 299,
+      height: 272
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(30).svg',
+      width: 221,
+      height: 323
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(31).svg',
+      width: 84,
+      height: 125
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(32).svg',
+      width: 341,
+      height: 112
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(33).svg',
+      width: 77,
+      height: 116
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(34).svg',
+      width: 299,
+      height: 268
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(35).svg',
+      width: 77,
+      height: 116
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(36).svg',
+      width: 341,
+      height: 224
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(37).svg',
+      width: 322,
+      height: 346
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(38).svg',
+      width: 341,
+      height: 250
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(39).svg',
+      width: 299,
+      height: 217
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(40).svg',
+      width: 341,
+      height: 323
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(41).svg',
+      width: 104,
+      height: 227
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(42).svg',
+      width: 340,
+      height: 431
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(43).svg',
+      width: 341,
+      height: 439
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(44).svg',
+      width: 341,
+      height: 242
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(45).svg',
+      width: 341,
+      height: 242
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(46).svg',
+      width: 340,
+      height: 669
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(47).svg',
+      width: 341,
+      height: 410
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(48).svg',
+      width: 340,
+      height: 351
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(49).svg',
+      width: 126,
+      height: 126
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(50).svg',
+      width: 84,
+      height: 99
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(51).svg',
+      width: 282,
+      height: 334
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(52).svg',
+      width: 77,
+      height: 173
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(53).svg',
+      width: 77,
+      height: 149
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(54).svg',
+      width: 221,
+      height: 430
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(55).svg',
+      width: 300,
+      height: 128
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(56).svg',
+      width: 340,
+      height: 125
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(57).svg',
+      width: 220,
+      height: 493
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(58).svg',
+      width: 340,
+      height: 260
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(59).svg',
+      width: 341,
+      height: 309
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(60).svg',
+      width: 341,
+      height: 597
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(61).svg',
+      width: 332,
+      height: 694
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(62).svg',
+      width: 341,
+      height: 310
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(63).svg',
+      width: 341,
+      height: 305
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(64).svg',
+      width: 341,
+      height: 264
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(65).svg',
+      width: 47,
+      height: 104
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(66).svg',
+      width: 299,
+      height: 287
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(67).svg',
+      width: 194,
+      height: 550
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(68).svg',
+      width: 341,
+      height: 870
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(69).svg',
+      width: 221,
+      height: 541
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(70).svg',
+      width: 77,
+      height: 114
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(71).svg',
+      width: 341,
+      height: 438
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(72).svg',
+      width: 341,
+      height: 224
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(73).svg',
+      width: 322,
+      height: 608
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(74).svg',
+      width: 341,
+      height: 215
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(75).svg',
+      width: 341,
+      height: 464
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(76).svg',
+      width: 46,
+      height: 114
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(77).svg',
+      width: 341,
+      height: 157
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(78).svg',
+      width: 341,
+      height: 256
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(79).svg',
+      width: 532,
+      height: 376
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(80).svg',
+      width: 77,
+      height: 108
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(81).svg',
+      width: 77,
+      height: 129
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(82).svg',
+      width: 342,
+      height: 249
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(83).svg',
+      width: 33,
+      height: 175
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(84).svg',
+      width: 317,
+      height: 428
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(85).svg',
+      width: 341,
+      height: 341
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(86).svg',
+      width: 341,
+      height: 458
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(87).svg',
+      width: 341,
+      height: 296
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(88).svg',
+      width: 221,
+      height: 411
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(89).svg',
+      width: 341,
+      height: 149
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(90).svg',
+      width: 51,
+      height: 114
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(91).svg',
+      width: 268,
+      height: 420
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(92).svg',
+      width: 33,
+      height: 144
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(93).svg',
+      width: 341,
+      height: 229
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(94).svg',
+      width: 231,
+      height: 482
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(95).svg',
+      width: 299,
+      height: 299
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(96).svg',
+      width: 342,
+      height: 90
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(97).svg',
+      width: 84,
+      height: 400
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(98).svg',
+      width: 532,
+      height: 376
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(99).svg',
+      width: 278,
+      height: 609
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(100).svg',
       width: 339,
-      height: 314
+      height: 352
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(101).svg',
+      width: 300,
+      height: 218
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(102).svg',
+      width: 341,
+      height: 490
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(103).svg',
+      width: 278,
+      height: 550
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(104).svg',
+      width: 278,
+      height: 550
+    },
+    {
+      name: '',
+      type: 'device',
+      class: 'water',
+      img: '/img/svg/FSCL/FSCL(105).svg',
+      width: 300,
+      height: 300
     }
   ],
   imgItems: [ // 图形

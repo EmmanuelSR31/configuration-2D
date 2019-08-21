@@ -22,6 +22,10 @@ export default {
   },
   methods: {
     init: function () {
+      let valTemp = '0'
+      if (this.val !== undefined) {
+        valTemp = this.val
+      }
       if (this.charts) {
         this.charts.dispose()
       }
@@ -35,7 +39,7 @@ export default {
         },
         series: [{
           type: 'liquidFill',
-          data: [this.$math.divide(this.val, this.obj.max).toFixed(2)],
+          data: [this.$math.divide(valTemp, this.obj.max).toFixed(2)],
           shape: 'container',
           radius: '100%',
           color: [this.obj.color],
@@ -57,7 +61,6 @@ export default {
     }
   },
   mounted () {
-    this.val = '0'
     this.init()
   },
   watch: {

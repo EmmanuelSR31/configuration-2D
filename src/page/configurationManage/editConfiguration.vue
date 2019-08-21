@@ -48,6 +48,10 @@
             <li :class="{'active': svgItemsTypeTitle === '容器'}" @click="setSvgItems('svgContainerItems', '容器')">容器</li>
             <li :class="{'active': svgItemsTypeTitle === '阀门'}" @click="setSvgItems('svgValveItems', '阀门')">阀门</li>
             <li :class="{'active': svgItemsTypeTitle === '水处理'}" @click="setSvgItems('svgWaterItems', '水处理')">水处理</li>
+            <li :class="{'active': svgItemsTypeTitle === 'HAVC'}" @click="setSvgItems('svgHavcItems', 'HAVC')">HAVC</li>
+            <li :class="{'active': svgItemsTypeTitle === '加热器'}" @click="setSvgItems('svgHeaterItems', '加热器')">加热器</li>
+            <li :class="{'active': svgItemsTypeTitle === '物流'}" @click="setSvgItems('svgLogisticsItems', '物流')">物流</li>
+            <li :class="{'active': svgItemsTypeTitle === '工业'}" @click="setSvgItems('svgIndustryItems', '工业')">工业</li>
           </ul>
         </div>
         <ul v-show="!deviceItemTypeShow && curItemListType === 'device'" class="config-item-list">

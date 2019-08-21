@@ -187,7 +187,7 @@ export default {
       const that = this
       if (this.sensorIds.length > 0) {
         this.getSensorData()
-        this.timer = window.setInterval(that.getSensorData, 30000)
+        this.timer = window.setInterval(that.getSensorData, 5000)
       }
     },
     /**
@@ -305,12 +305,4 @@ export default {
 
 <style lang="scss">
 @import "../../style/configuration";
-.config-view-item{
-  position: absolute;
-}
-.view-config-con{
-  position: absolute;
-  left: 0;
-  top: 0;
-}
 </style>

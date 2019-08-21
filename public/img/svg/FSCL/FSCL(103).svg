@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg preserveAspectRatio="none" version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="278.25px" height="549.891px" viewBox="61.23 -130.602 278.25 549.891"
+	 enable-background="new 61.23 -130.602 278.25 549.891" xml:space="preserve">
+<g id="surface756">
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="385.6133" y1="-112.7124" x2="14.6133" y2="-112.7124" gradientTransform="matrix(0.75 0 0 -0.75 50.2695 90.2549)">
+		<stop  offset="0" style="stop-color:#90A38C"/>
+		<stop  offset="0.01" style="stop-color:#D8EBD4"/>
+		<stop  offset="0.03" style="stop-color:#BDD4B7"/>
+		<stop  offset="0.64" style="stop-color:#BAD0B4"/>
+		<stop  offset="0.99" style="stop-color:#B5CCB0"/>
+		<stop  offset="1" style="stop-color:#869782"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M61.23-69.711h278.25v489H61.23V-69.711z"/>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="75.6113" y1="12.2876" x2="14.6113" y2="12.2876" gradientTransform="matrix(0.75 0 0 -0.75 166.4556 29.3633)">
+		<stop  offset="0" style="stop-color:#9FB39B"/>
+		<stop  offset="0.15" style="stop-color:#DAECD6"/>
+		<stop  offset="0.25" style="stop-color:#DDEED9"/>
+		<stop  offset="0.52" style="stop-color:#B3C9AE"/>
+		<stop  offset="0.69" style="stop-color:#9FB39B"/>
+		<stop  offset="0.8" style="stop-color:#96A992"/>
+		<stop  offset="0.92" style="stop-color:#8E9F89"/>
+	</linearGradient>
+	<path fill="url(#SVGID_2_)" d="M177.414-130.602h45.75v301.5h-45.75V-130.602z"/>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="346.7705" y1="46.6079" x2="14.6147" y2="46.6079" gradientTransform="matrix(0.75 0 0 -0.75 64.7295 55.2617)">
+		<stop  offset="0" style="stop-color:#90A38C"/>
+		<stop  offset="0.01" style="stop-color:#D8EBD4"/>
+		<stop  offset="0.03" style="stop-color:#BDD4B7"/>
+		<stop  offset="0.64" style="stop-color:#BAD0B4"/>
+		<stop  offset="0.99" style="stop-color:#B5CCB0"/>
+		<stop  offset="1" style="stop-color:#869782"/>
+	</linearGradient>
+	<path fill="url(#SVGID_3_)" d="M77.191-104.703h246c0.75,0,1.617,0.645,1.617,1.492l-0.117,246.758c0,0.75-0.563,1.77-1.406,1.77
+		l-246.094-0.27c-0.75,0-1.5-0.496-1.5-1.34v-246.91c0-0.75,0.602-1.5,1.445-1.5H77.191z"/>
+	
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="96.6113" y1="198.2861" x2="14.6113" y2="198.2861" gradientTransform="matrix(0.75 0 0 -0.75 158.5645 331.1787)">
+		<stop  offset="0" style="stop-color:#9FB39B"/>
+		<stop  offset="0.15" style="stop-color:#DAECD6"/>
+		<stop  offset="0.25" style="stop-color:#DDEED9"/>
+		<stop  offset="0.52" style="stop-color:#B3C9AE"/>
+		<stop  offset="0.69" style="stop-color:#9FB39B"/>
+		<stop  offset="0.8" style="stop-color:#96A992"/>
+		<stop  offset="0.92" style="stop-color:#8E9F89"/>
+	</linearGradient>
+	<path fill="url(#SVGID_4_)" d="M171.023,171.215h58.5c0.75,0,1.453,0.723,1.453,1.617l0.047,18.633c0,1.5-0.77,1.98-1.66,1.98
+		l-58.34,0.27c-0.75,0-1.5-0.992-1.5-1.887v-19.113c0-0.75,0.723-1.5,1.613-1.5H171.023z"/>
+	
+		<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-165.2134" y1="-34.2744" x2="-488.2134" y2="-34.2744" gradientTransform="matrix(0 -0.75 -0.75 0 174.5439 -224.8604)">
+		<stop  offset="0" style="stop-color:#90A38C"/>
+		<stop  offset="0.01" style="stop-color:#D8EBD4"/>
+		<stop  offset="0.03" style="stop-color:#BDD4B7"/>
+		<stop  offset="0.64" style="stop-color:#BAD0B4"/>
+		<stop  offset="0.99" style="stop-color:#B5CCB0"/>
+		<stop  offset="1" style="stop-color:#869782"/>
+	</linearGradient>
+	<path fill="url(#SVGID_5_)" d="M79.379,139.801v-239.25c0-0.75,0.625-1.289,1.441-1.289l238.559-0.211
+		c0.75,0,1.742,0.875,1.742,1.695l-0.242,239.055c0,0.75-0.496,1.5-1.316,1.5H80.879c-0.75,0-1.5-0.586-1.5-1.406V139.801z"/>
+</g>
+</svg>
