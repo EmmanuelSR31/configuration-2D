@@ -30,7 +30,6 @@ export default {
     init: function () {
       this.ctx = this.canvas.getContext('2d')
       this.drawPipeline()
-      console.log(this.val)
     },
     drawPipeline: function () {
       this.initWater()

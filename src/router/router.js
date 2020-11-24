@@ -63,7 +63,9 @@ export const noRuleRouter = {
   component: Main,
   children: [
     { path: 'home', title: { i18n: 'home' }, name: 'home', component: resolve => { require(['@/page/home/home.vue'], resolve) } },
-    { path: 'ownspace', title: '个人中心', name: 'ownspace', component: resolve => { require(['@/page/own-space/own-space.vue'], resolve) } }
+    { path: 'ownspace', title: '个人中心', name: 'ownspace', component: resolve => { require(['@/page/own-space/own-space.vue'], resolve) } },
+    { path: 'sampleCardbook', title: '样卡本', name: 'sampleCardbook', component: resolve => { require(['@/page/sampleCardbook/sampleCardbook.vue'], resolve) } },
+    { path: 'viewSampleCardbook', title: '样卡本', name: 'viewSampleCardbook', component: resolve => { require(['@/page/sampleCardbook/viewSampleCardbook.vue'], resolve) } }
   ]
 }
 
